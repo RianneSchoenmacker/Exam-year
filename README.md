@@ -1,5 +1,5 @@
-# Exam-year
+# Examenjaar
 
-Welcome to my journey of exploring design practice during my current semester in my senior year. On this page, I will document my process, experiences, and reflections as I execute my practice plan. This includes continuous experimentation, learning, and critical thinking about my role as a designer.
+Welkom bij mijn reis in het verkennen van de designpraktijk tijdens mijn huidige semester in mijn afstudeerjaar. Op deze pagina zal ik mijn proces, ervaringen en reflecties documenteren terwijl ik mijn praktijkplan uitvoer. Dit omvat voortdurende experimenten, leren en kritisch nadenken over mijn rol als ontwerper.
 
-I will also include snapshots of the work I am creating, from digital and physical designs to practical implementations of interactive elements. This page serves as a reflection space for my final presentations and my ongoing development of ideas and skills.
+Ik zal ook beelden delen van het werk dat ik maak, van digitale en fysieke ontwerpen tot de praktische implementatie van interactieve elementen. Deze pagina fungeert als een reflectieruimte voor mijn eindpresentaties en de voortdurende ontwikkeling van mijn ideeën en vaardigheden.
