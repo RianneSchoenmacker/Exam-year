@@ -8,4 +8,4 @@ Ik zal ook beelden delen van het werk dat ik maak, van digitale en fysieke ontwe
 Project door                : Rianne Schoenmacker
 Studiejaar                  : 4 
 Praktijkverkenningsperiode  : Eigen project
-Samenwerkingspartner        : Mark Hinch, Michelle vossen en Marlon Groenhart.
+Samenwerkingspartner        : [Mark Hinch] (https://www.markhinch.com/), [Michelle vossen] (https://michellevossen.com/workshops/) en [Marlon Groenhart] (http://www.marlongroenhart.com/).
