@@ -2,13 +2,21 @@ Dit is mijn bronnenlijst die ik heb gebruikt voor dit project onderzoek.
 
 # Specifieke ontwerp platvormen
 [Dribble](https://dribbble.com/)
+
 [Design/milk](https://design-milk.com/)
+
 [Design Digger](https://www.designdigger.nl/)
+
 [Designboom](https://www.designboom.com/)
+
 [Megosu](https://www.megosu.com/)
+
 [Designwanted](https://designwanted.com/)
+
 [It’s Nice That](https://www.itsnicethat.com/)
+
 [Behance](https://www.behance.net/)
+
 [The Zine](https://www.thezine.com.au/) 
 
 # Marktonderzoek
