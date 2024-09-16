@@ -10,4 +10,4 @@ Ik zal ook beelden delen van het werk dat ik maak, van digitale en fysieke ontwe
 
 **Praktijkverkenningsperiode**  : Eigen project
 
-**Samenwerkingspartner**        : [Mark Hinch](https://www.markhinch.com/), [Michelle vossen](https://michellevossen.com/workshops/) en [Marlon Groenhart](http://www.marlongroenhart.com/).
+**Samenwerkingspartner**        : [Mark Hinch](https://www.markhinch.com/), [Michelle vossen](https://michellevossen.com/) en [Marlon Groenhart](http://www.marlongroenhart.com/).
