@@ -1,24 +1,19 @@
+Creative Commons Attribution-NonCommercial 4.0 International License
 
+Copyright (c) [jaar] Rianne Schoenmacker
 
-Copyright (c) [2024] Rianne Schoenmacker
+Je bent vrij om:
 
-Licentie
-Dit werk is gelicentieerd onder de Creative Commons Attribution-NonCommercial 4.0 International License. Dit betekent het volgende:
+- Het werk te delen - het te kopiëren en te verspreiden in elk formaat of medium.
+- Het werk te remixen - het te transformeren en afgeleide werken te maken.
 
-Wat je mag doen:
-Delen: Je mag een kopie van dit werk maken en verspreiden in elk formaat of medium.
+Onder de volgende voorwaarden:
 
-Remixen: Je mag het werk aanpassen, transformeren, en afgeleide werken maken op basis van dit werk.
+- **Attributie**: Je moet de naam van de auteur (Rianne Schoenmacker) en eventuele andere bijdragegevers vermelden, zoals gespecificeerd door de auteur of de rechtshouder. Deze vermelding moet op een manier zijn die niet suggereert dat de auteur jouw gebruik van het werk goedkeurt.
+- **Niet-Commercieel**: Je mag het werk niet gebruiken voor commerciële doeleinden. Dit betekent dat je geen geld mag verdienen met het werk of het werk in een commerciële context mag gebruiken.
 
-Voorwaarden:
-Attributie: Je moet de naam van de auteur (Rianne Schoenmacker) en eventuele andere bijdragegevers vermelden, zoals gespecificeerd door de auteur of de rechtshouder. Deze vermelding moet op een manier zijn die niet suggereert dat de auteur jouw gebruik van het werk goedkeurt.
-Niet-Commercieel: Je mag het werk niet gebruiken voor commerciële doeleinden. Dit betekent dat je geen geld mag verdienen met het werk of het werk in een commerciële context mag gebruiken.
+Geen andere beperkingen: Je mag geen juridische beperkingen of technische maatregelen aanbrengen die anderen beperken in de uitoefening van de rechten die door de licentie worden verleend.
 
-Beperkingen:
-Geen Commerciële Gebruik: Je mag het werk niet gebruiken op een manier die direct of indirect commercieel is. Bijvoorbeeld, je mag geen geld verdienen door het werk te verkopen of in een commercieel product op te nemen.
-Geen Extra Beperkingen: Je mag geen juridische beperkingen of technische maatregelen aanbrengen die anderen beperken in de uitoefening van de rechten die door deze licentie worden verleend.
+Je kunt een kopie van de volledige licentie hier vinden: https://creativecommons.org/licenses/by-nc/4.0/
 
-Geen Garantie:
-Dit werk wordt aangeboden "zoals het is", zonder enige garanties, expliciet of impliciet, inclusief maar niet beperkt tot garanties van verkoopbaarheid, geschiktheid voor een bepaald doel of niet-inbreuk. De auteur is niet aansprakelijk voor enige schade of verlies voortvloeiend uit het gebruik van dit werk.
-
-Voor de volledige tekst van de licentie, bezoek: Creative Commons Attribution-NonCommercial 4.0 International License
+DEZE LICENTIE WORDT AANGEBODEN "AS IS", ZONDER ENIGE GARANTIE, UITDRUKKELIJK OF IMPLICIET, INCLUSIEF MAAR NIET BEPERKT TOT DE GARANTIES VAN VERKOOPBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL OF HET NIET-OP OVERTREDING.
