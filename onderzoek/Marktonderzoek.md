@@ -103,3 +103,21 @@ Verder heb ik onderzoek gedaan door mijn project te delen op meerdere reddit kan
 
 Deze platformen hielp mij in contact te komen met diverse mensen van over de hele wereld. 
 
+Dit was het bericht:
+
+Title: Fiber Optics and Capacitive Sensors in a Rug – Need Some Advice!
+Hey everyone! How are you doing?
+I’m working on a project where I’ve integrated fiber optic wires into a rug, connected to LED lights. The lights turn on when you stroke the rug thanks to capacitive sensors (TTP223). I haven’t used a microcontroller yet, but I’m considering it. However, I’m unsure how to connect each sensor and LED light, as it seems like they’d each need their own pin. Is that right?
+To increase the range of the capacitive sensors, I soldered copper spirals onto them, which works, but sometimes the sensors trigger each other. I think this might be due to improper spacing. Any ideas on how to fix that?
+Right now, the fiber optic wires are punched through the rug by hand, but I’m curious if anyone has suggestions for getting the light to shine through more effectively. I’m considering tufting the wires directly into the rug, but attaching the lights to the wires seems tricky.
+I’m also at a point where I want to experiment more, so it doesn’t have to be with the materials I’ve already tried. If there are other alternatives to fiber optics that might work better, I’d love to hear about them!
+Here are some photos of the process and the current state of the rug for a better look at what I’m working on.
+I’d love any feedback or suggestions! You can see more of the process on my Instagram @rianne.schoenmacker.
+Thanks so much in advance!
+Lots of love,
+Rianne xx
+
+Ik heb dit bericht gepost op tufting, askelectronics, arduino en led
+
+Een soort gelijk bericht had ik gepost in een discord van Nerdforge.
+

@@ -59,5 +59,27 @@ chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/http://www.ivanpoupyrev.com/
 
 chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/http://proceeding.conferenceworld.in/IETE-CONFERENCE/IETEH4008.pdf
 
-
 chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.tandfonline.com/doi/pdf/10.1080/14606925.2017.1353041
+
+FORMAT. (2023, 10 juli). Visual & Creative Artists Magazine | Format. https://www.format.com/magazine/textile-portfolio-roundup
+
+Schley, A. (2020, 7 december). Elizabeth Whelan Design Creates an Innovative Fabric Infused with LED Yarn. I+S Design. https://www.iands.design/industry-news/article/10180537/elizabeth-whelan-design-creates-an-innovative-fabric-infused-with-led-yarn
+
+How Iris van Herpen transformed fashion - Google Arts & Culture. (z.d.). Google Arts & Culture. https://artsandculture.google.com/story/how-iris-van-herpen-transformed-fashion/MAVhbe0AS9KOLQ
+
+Fressynet, C. (2023, 21 juni). Designer Clara Daguin lights up fashion with luminous Eweave ribbons. - Satab. Satab. https://www.satab.com/en/designer-clara-daguin-lights-up-fashion-with-luminous-eweave-ribbons/
+
+有限会社 nendo. (2023, 17 april). en - nendo. Nendo. https://www.nendo.jp/en/
+
+Cruz, M. (2021, 17 december). Ayala Serfaty at Cristina Grajales. Cristina Grajales Gallery. https://cristinagrajales.com/news/ayala-serfaty/
+
+Designboom. (2021, 3 juni). anila quayyum agha on how life experience led to an impassioned artistic exploration of light. Designboom | Architecture & Design Magazine. https://www.designboom.com/art/anila-quayyum-agha-life-experience-artistic-exploration-light-06-03-2021/
+
+Curated, S. (2017, 8 augustus). 9 British Artists & Designers experimenting with light. Something Curated. https://somethingcurated.com/2017/08/08/9-british-artists-designers-experimenting-with-light/
+
+Axell, J. (2024, 12 september). Discover: Six contemporary felt artists – TextileArtist. TextileArtist. https://www.textileartist.org/5-contemporary-felt-textile-artists/
+
+https://www.artsy.net/article/artsy-editorial-10-textile-artists-who-are-pushing-the-medium-forward
+
+Breen, L. (2023, 20 juli). 13 Textile Artists Pushing the Medium Forward. Sixtysix Magazine. https://sixtysixmag.com/textile-artists/
+

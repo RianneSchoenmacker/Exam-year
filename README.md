@@ -4,6 +4,7 @@ Welkom bij mijn eigen project van mijn laatste jaar op de academie. Op deze pagi
 
 Ik zal ook beelden delen van het werk dat ik maak, van digitale en fysieke ontwerpen tot de praktische implementatie van interactieve elementen. Deze pagina dient als een reflectieruimte voor mijn eindpresentaties en de voortdurende ontwikkeling van mijn ideeën en vaardigheden.
 
+
 **Project door**                : Rianne Schoenmacker
 
 **Studiejaar**                  : 4 

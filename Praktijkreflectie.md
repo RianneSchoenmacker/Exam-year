@@ -38,10 +38,22 @@ Tot slot wil ik reflecteren op mijn sterke punten en ontwikkelingsgebieden als o
 ### Wat gaat/ging goed en waarom?
 
 ### Wat gaat/ging minder goed en waarom?
+Problemen vorige project
+- Sensoren
+	- Sensoren hadden storing naar elkaar
+	- De range was niet heel groot
+	- Aansluiting was tijd rovend
+	- Slechte soldeerbout
+	- Geen schakelaar om uit te doen
+	
+- Licht
+	- Glasvezel dragen door het doek krijgen koste veel tijd
+
 
 ### Wat zegt dit over mij als ontwerper?
 
 ### Waar wil ik me (verder) in ontwikkelen?
+
 
 # Vooruitblik op de toekomst 
 Je zet een richting uit waarin jij je verder wilt ontwikkelen met je afstuderen. Door de richting in semester 7 scherp te krijgen kun je in semester 8 direct aan de slag. Door bewust te zijn van je interesses en positionering, kun je bepalen welke stappen jij kan zetten om daar te komen. Bij de reflectie heb je al benoemd hoe je jezelf ziet. Nu kijk je verder dan het heden.
