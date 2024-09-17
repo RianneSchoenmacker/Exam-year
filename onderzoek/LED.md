@@ -42,3 +42,17 @@ Dit doet het maar het werkt het best als de verlichting iets van het kleed af zi
 1. Meer led lampjes naast elkaar.
 2. Glasvezel minder willekeurig door het kleed.
 3. Een kleine afstand tussen het kleed en de LED-verlichting.
+
+
+# Materialen
+Ik ben nu begonnen met onderzoek met glasvezel maar het gbruik van:
+- Lichtgeleidende Garens
+    - Lumina Yarn: Dit garen is speciaal ontworpen om licht door te geven. Het kan worden gebruikt in textiele projecten om een zachte, uniforme gloed te creëren.
+    - Fiber Optic Yarn: Dit garen bevat fiber optics die licht doorgeven, wat zorgt voor een helder en direct licht dat zichtbaar is op specifieke punten van je werkstuk.
+- Lichtdiffuserende Stoffen
+    - Voile: Een lichte, doorzichtige stof die een zachte lichtverspreiding mogelijk maakt. Het kan worden gebruikt om een diffuse lichtstraling te creëren zonder de noodzaak van zware apparatuur.
+    - Organza: Een transparante stof die licht diffundeert en een subtiele gloed toevoegt aan je project.
+    - Diffuser Fabric: Speciale stoffen ontworpen om licht gelijkmatig te verspreiden, vaak gebruikt in verlichtingsdiffusors.
+
+
+Sluit ik niet uit.
