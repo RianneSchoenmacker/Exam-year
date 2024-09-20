@@ -83,3 +83,25 @@ https://www.artsy.net/article/artsy-editorial-10-textile-artists-who-are-pushing
 
 Breen, L. (2023, 20 juli). 13 Textile Artists Pushing the Medium Forward. Sixtysix Magazine. https://sixtysixmag.com/textile-artists/
 
+# Senoren
+
+Instructables. (2017b, november 8). Pressure Sensor Matrix. Instructables. https://www.instructables.com/Pressure-Sensor-Matrix/
+
+HOW TO GET WHAT YOU WANT. (z.d.). https://www.kobakant.at/DIY/?p=7943
+
+HOW TO GET WHAT YOU WANT. (z.d.-b). https://www.kobakant.at/DIY/?p=7443
+
+Pieters, A. (2022, 5 september). ESP32 – PinOut. https://www.studiopieters.nl/esp32-pinout/
+
+Santos, R., & Santos, R. (2024, 28 februari). Installing ESP32 in Arduino IDE (Windows, Mac OS X, Linux) | Random Nerd Tutorials. Random Nerd Tutorials. https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/
+
+Kitronyx Inc. (2014, 23 september). Multi-Touch on FSR Matrix Array Sensor connected to Snowboard [Video]. YouTube. https://www.youtube.com/watch?v=qjruYfwsOaI
+
+Marco Reps. (2017, 19 september). Hi-Res Pressure Sensor Matrix with the LattePanda [Video]. YouTube. https://www.youtube.com/watch?v=4JBSHqUcaG4
+
+Marco Reps. (2017b, oktober 26). Part 2: Hi-Res Pressure Sensor Matrix Mat finished [Video]. YouTube. https://www.youtube.com/watch?v=0uPZwMg5B3k
+
+Wearable Media. (2018, 10 december). E-Textile Sensor Experiments: Tufting with conductive thread [Video]. YouTube. https://www.youtube.com/watch?v=nXGHdgcPxHQ
+
+Charbax. (2017, 15 juli). Peratech 3D force-sensing Touch sensors [Video]. YouTube. https://www.youtube.com/watch?v=J-vrjdvi94w
+
