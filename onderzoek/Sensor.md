@@ -64,9 +64,9 @@
 Ik wil beginnen met het maken van de:
 - [Kapton + Copper Matrix](https://www.kobakant.at/DIY/?p=7443)
 
-Ik denk dat ik hiermee de beste resultaten kan halen.
+Ik denk dat ik hiermee de beste resultaten kan halen. Ik heb de producten besteld en ga hier mee testen veel producten zoals de geleidende verf heb ik nog nooit mee gewerkt dus zal ik ook beginnende experimenten mee doen om te kijken hoe het werkt en hoe het reageert.
 
-Wat ik heirvoor nodig heb:
+Wat ik heirvoor nodig/besteld en hoe ik getest heb:
 
 - Kapton-tape: Dit is een dunne, flexibele, hittebestendige tape die vaak wordt gebruikt in elektronica. Het dient als de isolator in de matrix.
 
@@ -98,10 +98,7 @@ Wat ik heirvoor nodig heb:
 
 - Microcontroller (bijv. Arduino of ESP): Deze is nodig om de signalen van de matrixsensor te verwerken en verdere acties (zoals het activeren van verlichting) aan te sturen.
 
-Ik heb de producten besteld en ga hier mee testen veel producten zoals de geleidende verf heb ik nog nooit mee gewerkt dus zal ik ook beginnende experimenten mee doen om te kijken hoe het werkt en hoe het reageert.
-
-
-Ik ben begonnen met de koper tape de Matrix te maken op karton. 
+Ik ben begonnen met de koper tape de Matrix te maken op karton. Ik heb de coper tape beverstigd en daaraan draden gesoldeerd. Vervolgens heb ik getest of het de stroom nog wel geleid door dit te meten.
 
 <div style="display: flex; justify-content: space-between;">
     <img src="../images/sensoren/druksensormaken1.jpg" alt="Afbeelding 1" width="200"/>
@@ -114,7 +111,7 @@ Ik ben begonnen met de koper tape de Matrix te maken op karton.
     <img src="../images/sensoren/druksensormaken5.jpg" alt="Afbeelding 1" width="200"/>
 </div>
 
-Helaas werkt mijn code nog niet dus ben er nog druk mee bezig!
+Helaas werkt mijn code nog niet dus ben er nog druk mee bezig maar het is wel gelukt een soort meting te maken. 
 
 <div style="display: flex; justify-content: space-between;">
     <img src="../images/sensoren/Matrixtest.png" alt="Afbeelding 1" width="200"/>
