@@ -69,14 +69,28 @@ Ik denk dat ik hiermee de beste resultaten kan halen.
 Wat ik heirvoor nodig heb:
 
 - Kapton-tape: Dit is een dunne, flexibele, hittebestendige tape die vaak wordt gebruikt in elektronica. Het dient als de isolator in de matrix.
-Voorbeeld: Kapton Polyimide Tape.
 
-- Kopertape: Een zelfklevende tape gemaakt van koper, die als geleidende laag dient in je sensor.
-Voorbeeld: Zelfklevende kopertape (breedte varieert afhankelijk van jouw ontwerp).
+- Kopertape of woven geleidende tape: Een zelfklevende tape gemaakt van koper of gelijdende draad, die als geleidende laag dient in je sensor.
 
-- Dubbelzijdig tape: Dit kan worden gebruikt om de lagen stevig op elkaar te plakken, vooral als je een zeer dunne en flexibele matrix wilt creëren.
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/kopertape.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/kopertapecircuit.jpg" alt="Afbeelding 2" width="200"/>
+    <img src="../images/sensoren/kopertapecircuitaan.jpg" alt="Afbeelding 3" width="200"/>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/woventape.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/woventapecircuit.jpg" alt="Afbeelding 2" width="200"/>
+    <img src="../images/sensoren/woventapecircuitaan.jpg" alt="Afbeelding 3" width="200"/>
+</div>
 
 - Elektrische geleidende verf: Als alternatief voor kopertape kun je geleidende verf gebruiken om patronen te schilderen op de Kapton-tape.
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/geleidendverf.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/geleidendverfcircuit.jpg" alt="Afbeelding 2" width="200"/>
+    <img src="../images/sensoren/geleidendverfcircuitaan.jpg" alt="Afbeelding 3" width="200"/>
+</div>
 
 - Solderen of geleidend lijm: Dit is nodig om de kopertape met de rest van je circuit te verbinden.
 
@@ -86,3 +100,22 @@ Voorbeeld: Zelfklevende kopertape (breedte varieert afhankelijk van jouw ontwerp
 
 Ik heb de producten besteld en ga hier mee testen veel producten zoals de geleidende verf heb ik nog nooit mee gewerkt dus zal ik ook beginnende experimenten mee doen om te kijken hoe het werkt en hoe het reageert.
 
+
+Ik ben begonnen met de koper tape de Matrix te maken op karton. 
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/druksensormaken1.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/druksensormaken2.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/druksensormaken3.jpg" alt="Afbeelding 3" width="200"/>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/druksensormaken4.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/druksensormaken5.jpg" alt="Afbeelding 1" width="200"/>
+</div>
+
+Helaas werkt mijn code nog niet dus ben er nog druk mee bezig!
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/Matrixtest.png" alt="Afbeelding 1" width="200"/>
+</div>
