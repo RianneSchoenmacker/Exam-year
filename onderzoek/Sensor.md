@@ -141,7 +141,6 @@ Daarna heb ik 3 vierkantjes uitgesneden en heb ik op een overig stukje geoevend 
 <div style="display: flex; justify-content: space-between;">
     <img src="../images/sensoren/druksensormaken1f.jpg" alt="Afbeelding 1" width="200"/>
     <img src="../images/sensoren/druksensormaken1d.jpg" alt="Afbeelding 1" width="200"/>    
-    <img src="../images/sensoren/druksensormaken1c.jpg" alt="Afbeelding 1" width="200"/>
     <img src="../images/sensoren/druksensormaken1b.jpg"    alt="Afbeelding 1" width="200"/>  
     <img src="../images/sensoren/druksensormaken1a.jpg" alt="Afbeelding 1" width="200"/>
 </div>
