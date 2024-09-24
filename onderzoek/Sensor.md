@@ -3,59 +3,66 @@
 ## Hoe kan ik het kleed laten activeren?
 
 ### 1. Gewichtssensoren / Druksensoren
-- **Drukgevoelige Pads**: Gebruik druksensoren die het licht aanzetten wanneer er druk op wordt uitgeoefend. Dit kan een andere manier zijn om interactie te detecteren en het licht te activeren.
-- **Integratie**: Deze sensor kan in je werkstuk worden geïntegreerd om gebieden te detecteren waar druk wordt uitgeoefend en vervolgens de verlichting te regelen.  
-  Deze sensoren kunnen detecteren hoeveel gewicht er op een bepaald gebied van het kleed wordt geplaatst. Ze kunnen nuttig zijn om het licht in te schakelen wanneer iemand op het kleed staat of drukt.
+- **Drukgevoelige Pads**: Ik kan druksensoren gebruiken die het licht aanzetten wanneer er druk op wordt uitgeoefend. Dit biedt een alternatieve manier om interactie te detecteren en het licht te activeren.
+  - *Integratie*: Deze sensor kan worden gebruikt om gebieden te detecteren waar druk wordt uitgeoefend en vervolgens de verlichting te regelen. Ze kunnen ook meten hoeveel gewicht er op specifieke plekken van het kleed wordt geplaatst, waardoor het licht kan aangaan wanneer iemand erop staat of drukt.
 
 - **Load Cell**:
   - *Wat is het?*: Load cells meten fysieke kracht, meestal druk of gewicht, en zetten deze om in elektrische signalen.
-  - *Gebruik*: Je kunt ze onder het kleed plaatsen om het gewicht van iemand te detecteren. In combinatie met een versterker (bijv. HX711) kunnen ze zelfs lichte druk meten.
-  - *Aanbevolen voor*: Het detecteren van gewicht of druk op specifieke plekken in het kleed.
+  - *Gebruik*: Ik kan ze onder het kleed plaatsen om het gewicht van een persoon te detecteren. In combinatie met een versterker (bijv. HX711) kunnen ze zelfs lichte druk meten.
 
-- [Kapton + Copper Matrix](https://www.kobakant.at/DIY/?p=7443)
+- [Kapton + Copper Matrix](https://www.kobakant.at/DIY/?p=7443) Deze matrix kan worden gebruikt om druk te meten over een groter oppervlak, wat kan helpen bij het activeren van het licht op basis van waar iemand staat, zit of drukt.
 
 ### 2. Touchsensoren
-- **Capacitive Touch Sensors**: Gebruik capacitive touch sensors om het licht in te schakelen wanneer iemand het werkstuk aanraakt. Deze sensors detecteren veranderingen in elektrische capaciteit veroorzaakt door aanraking en kunnen worden aangesloten op een microcontroller die de LEDs aanstuurt.
-- **Instellingen en Aanpassingen**: Zorg ervoor dat de sensors correct zijn afgesteld en gevoelig genoeg zijn om te reageren op aanraking zonder ongewenste valse triggers.
+- **Capacitive Touch Sensors**: Het gebruik van capacitive touch sensors maakt het mogelijk om het licht in te schakelen wanneer iemand het werkstuk aanraakt. Deze sensors detecteren veranderingen in elektrische capaciteit door aanraking en kunnen worden aangesloten op een microcontroller die de LEDs aanstuurt.
+  - *Instellingen en Aanpassingen*: Het is belangrijk dat de sensors correct zijn afgesteld en gevoelig genoeg zijn om te reageren op aanraking zonder ongewenste valse triggers.
 
-- **Capacitieve Touchsensor (bijv. TTP223)**:
-  - *Wat is het?*: Deze sensoren meten veranderingen in capacitieve lading wanneer ze worden aangeraakt. Ze reageren op lichte aanraking en kunnen discreet onder de stof van het kleed worden geplaatst.
-  - *Gebruik*: Geschikt voor het detecteren van aanrakingen op de oppervlakte van het kleed. Ze zijn eenvoudig te gebruiken en kunnen makkelijk geïntegreerd worden in een interactief lichtsysteem.
-  - *Aanbevolen voor*: Licht activeren door aanraking of beweging op het kleed.
+  - **Capacitieve Touchsensor (bijv. TTP223)**:
+    - *Wat is het?*: Deze sensoren meten veranderingen in capacitieve lading wanneer ze worden aangeraakt. Ze reageren op lichte aanraking en kunnen discreet onder de stof van het kleed worden geplaatst.
+    - *Gebruik*: Geschikt voor het detecteren van aanrakingen op het oppervlak van het kleed. Ze zijn eenvoudig te gebruiken en kunnen gemakkelijk worden geïntegreerd in een interactief lichtsysteem.
 
 - **Force Sensitive Resistor (FSR)**:
   - *Wat is het?*: Dit is een druksensor die weerstand meet afhankelijk van de druk die erop wordt uitgeoefend. Hoe harder de druk, hoe lager de weerstand.
-  - *Gebruik*: Plaats ze onder het kleed of in de tuftlagen om zachte druk of aanrakingen te meten. Ze reageren goed op zowel druk als aanraking.
-  - *Aanbevolen voor*: Licht activeren door druk of aanraking, met de mogelijkheid om de intensiteit van het licht aan te passen op basis van de druk.
+  - *Gebruik*: Ze kunnen onder het kleed of in de tuftlagen worden geplaatst om zachte druk of aanrakingen te meten. Ze reageren goed op zowel druk als aanraking.
 
 - [Force Sensitive Resistor uitleg](https://www.youtube.com/watch?v=qjruYfwsOaI)  
   (Kan dit achter het hele kleed?)
 
 ### 3. Afstandssensoren
-- **Bewegingssensoren**: Gebruik een bewegingssensor zoals een PIR-sensor (Passieve Infraroodsensor) om licht te activeren op basis van beweging in de buurt van je werkstuk.
-- **Instelbare Sensitiviteit**: Zorg ervoor dat de sensitiviteit van de bewegingssensor kan worden aangepast om alleen te reageren op relevante bewegingen.
+- **Bewegingssensoren**: Het gebruik van een bewegingssensor zoals een PIR-sensor (Passieve Infraroodsensor) kan helpen om licht te activeren op basis van beweging.
+  - *Instelbare Sensitiviteit*: Het is belangrijk dat de sensitiviteit van de bewegingssensor kan worden aangepast om alleen te reageren op relevante bewegingen.
 
 - **Ultrasone Afstandssensor (HC-SR04)**:
   - *Wat is het?*: Een ultrasone sensor die geluidsgolven gebruikt om de afstand tot een object te meten. Het is een betrouwbare en goedkope sensor voor korte afstanden.
-  - *Gebruik*: Deze sensoren kunnen worden gebruikt om de afstand te meten en het licht in te schakelen wanneer iemand het kleed nadert. Plaats ze bij de randen of onder het kleed.
-  - *Aanbevolen voor*: Automatisch activeren van licht wanneer iemand het kleed benadert.
+  - *Gebruik*: Deze sensoren kunnen worden gebruikt om de afstand te meten en het licht in te schakelen wanneer iemand het kleed nadert. 
 
 - **IR Afstandssensor (bijv. Sharp GP2Y0A02YK0F)**:
   - *Wat is het?*: Een infrarood afstandssensor die infrarood licht gebruikt om de afstand te meten. Hij werkt goed op korte tot middellange afstanden en is iets nauwkeuriger dan ultrasone sensoren.
   - *Gebruik*: Deze kan ook aan de rand van het kleed worden geplaatst om beweging te detecteren wanneer iemand in de buurt komt.
-  - *Aanbevolen voor*: Bewegingsdetectie van personen in de buurt van het kleed.
 
 - **Kinect**:
   - *Wat is het?*: Een camera die kan worden gebruikt om beweging en personen te detecteren.
-  - *Aanbevolen voor*: Bewegingsdetectie van personen voor het kleed, of als je een soort 'spiegel' wilt maken.
+
+- **Sensor mm Wave**:
+    - *Wat is het?*: Deze sensor kan worden gebruikt om beweging te detecteren, wat je in staat stelt om het licht te activeren wanneer iemand in de buurt komt. Het biedt een goede activeringsoptie zonder dat de gebruiker het kleed hoeft aan te raken.
+
+- **Break Beam Sensor**:
+      - *Wat is het?*: Deze sensor kan worden gebruikt om te detecteren wanneer een object de lichtstraal onderbreekt, waardoor het een trigger kan zijn voor verlichting.
 
 ### 4. Knop of Schakelaar
 - **Handmatige Controle**: Voor een eenvoudigere benadering kun je een knop of schakelaar integreren in je werkstuk die het licht in- en uitschakelt. Dit kan een fysieke knop zijn die de verlichting regelt.
-  - *Extra idee*: Je kunt er een spel van maken waarbij je de schakelaars in het kleed moet vinden.
 
 ### 5. Microcontroller en Programmatie
-- **Arduino of andere Microcontrollers**: Als je een microcontroller zoals een Arduino gebruikt, kun je deze programmeren om de verschillende sensoren te lezen en op basis van die input de LEDs aan te sturen. Dit biedt veel flexibiliteit en controle over hoe en wanneer het licht aan en uit gaat.
-- **Code Voorbeeld**: Je kunt een eenvoudige code schrijven die de sensorwaarden leest en op basis van die waarden de LEDs in- of uitschakelt. Er zijn veel voorbeelden en bibliotheken beschikbaar die je kunnen helpen met dit soort projecten.
+- **Arduino of andere Microcontrollers**: Door een microcontroller zoals een Arduino te gebruiken, kan ik deze programmeren om de verschillende sensoren te lezen en op basis van die input de LEDs aan te sturen. Dit biedt veel flexibiliteit en controle over hoe en wanneer het licht aan en uit gaat.
+- **Code Voorbeeld**: Ik kan een eenvoudige code schrijven die de sensorwaarden leest en op basis van die waarden de LEDs in- of uitschakelt. Er zijn veel voorbeelden en bibliotheken beschikbaar die me kunnen helpen met dit soort projecten.
+
+
+### Touch Foil Screen
+- **Wat is het?**: Met een touch foil screen kunnen gebruikers interactie hebben met het werkstuk door te tikken of te vegen. Het is een dunne, transparante folie die op het oppervlak van het werkstuk wordt aangebracht en die aanrakingen kan detecteren.
+  - **Gebruik**: Dit type scherm maakt het mogelijk om een intuïtieve gebruikerservaring te creëren, waarbij gebruikers verschillende functies of instellingen kunnen activeren door aanraking.
+
+### Scherm met Touch Screen
+- **Wat is het?**: Een touch screen is een interactief scherm dat reageert op aanraking, waardoor gebruikers eenvoudig kunnen navigeren door verschillende opties. Het scherm kan verschillende lichtinstellingen en interacties aanbieden.
+- **Gebruik**: Gebruikers kunnen met hun vingers op het scherm drukken om functies in te schakelen of instellingen aan te passen. Dit biedt een gebruiksvriendelijke interface voor het bedienen van verlichting en andere interactieve elementen in het werkstuk, zoals het kiezen van kleuren of het instellen van de helderheid.
 
 
 
@@ -116,3 +123,27 @@ Helaas werkt mijn code nog niet dus ben er nog druk mee bezig maar het is wel ge
 <div style="display: flex; justify-content: space-between;">
     <img src="../images/sensoren/Matrixtest.png" alt="Afbeelding 1" width="200"/>
 </div>
+
+Na mijn code meerdere keren opnieuw proberen heb ik besloten een paar stappen terug tegaan en na te maken wat ook gedaan is op [Kapton + Copper Matrix](https://www.kobakant.at/DIY/?p=7443). Door dit te doen hoop ik de code beter te kunnen begrijpen en te kunnen opschalen inplaats van gelijk groter te willen en proberen zonder dat ik weet wat ik doe.
+
+Ik ben dus stap voor stap begonnen. Eerst heb ik de Kapton tape dubbel geplakt om er een film van te hebben zonder plakkende kanten om vervolgens daar kopertape op te plakken met de zelfde afstand er tussen. Dit heb ik gedaan door tape in strookjes te snijden in de zelfde breedte als de tape. 
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/druksensormaken1j.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/druksensormaken1k.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/druksensormaken1i.jpg" alt="Afbeelding 1" width="200"/>    
+    <img src="../images/sensoren/druksensormaken1h.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/druksensormaken1g.jpg"    alt="Afbeelding 1" width="200"/>  
+</div>
+
+Daarna heb ik 3 vierkantjes uitgesneden en heb ik op een overig stukje geoevend met solderen om het vervolgens op de twee vierkante stukjes te doen. 
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/druksensormaken1f.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/druksensormaken1d.jpg" alt="Afbeelding 1" width="200"/>    
+    <img src="../images/sensoren/druksensormaken1c.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/druksensormaken1b.jpg"    alt="Afbeelding 1" width="200"/>  
+    <img src="../images/sensoren/druksensormaken1a.jpg" alt="Afbeelding 1" width="200"/>
+</div>
+
+De volgende stap is het conecten van mijn esp omdat dat ook gedaan wordt in mij voorbeeld.
