@@ -146,3 +146,113 @@ Daarna heb ik 3 vierkantjes uitgesneden en heb ik op een overig stukje geoevend 
 </div>
 
 De volgende stap is het conecten van mijn esp omdat dat ook gedaan wordt in mij voorbeeld.
+De esp koppelen aan arduino was even uitzoekken maar uiteindelijk deze [video](https://www.youtube.com/watch?v=BtSE0TeybfI) gevonden die het proces uitlegde. 
+
+Helaas werkte de code van mijn voorbeeld website niet gelijk helemaal maar dit is de bedoeling ervan.
+
+Ik sluit de colommen en rijen aan op de volgende pins.
+
+  int rows[] = {36, 39, 34, 35, 32, 33, 25}; 
+
+  int cols[] = {0, 4, 16, 17, 5, 18, 19};
+
+De rijen zitten op analoge pinnen en de colommen op digitale pinnen. De digitale pinnen kunnen alleen aangeven of een verbinding hoog of laag is, analoge ingangspinnen kunnen de exacte spanningswaarde lezen. De analoge pinnen ontvangen dus in dit geval en de digitale pinnen zenden. Het is de bedoeling dat deze op elkaar komen te liggen met een stuk velostat er tussen. *Velostat* is drukgevoelig knijpen of drukken vermindert de weerstand en is daarom handig voor het maken van flexibele sensoren.
+
+De rijen moeten dus altijd 0 zijn en de kollommen zijn 3.3 volt. als je druk zet op de sensor verminderd ve weerstand van de velostat en wortd er dus stroom doorgegeven van de kolommen naar de rijen. Dit gebeurt alleen niet helemaal en de rijen geven altijd een diverse en hoge weerstand. Dit wordt ook wel floating values genoemd. 
+
+Bij het testen in the progressing werkte het een beetje maar hij leek niet accuraat te zijn en ook steeds verbinding te krijgen op andere punten. 
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/druksensormaken1l.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/druksensormaken1m.jpg" alt="Afbeelding 1" width="200"/>    
+    <img src="../images/sensoren/druksensormaken1n.jpg"    alt="Afbeelding 1" width="200"/>  
+</div>
+
+
+# Touch Foil Screen
+
+Omdat de kapton + Copper Matrix nog niet helemaal werkt tot nu ben ik een onderzoek gestart naar Touch Foil Screens. 
+
+Touchscreenfolie is een transparante, ultradunne film die op een glazen of acryl oppervlak kan worden aangebracht om er een aanraakgevoelige interface van te maken.
+
+Hoe ik dit voormij kan zien in mijn project is direct achter mijn kleed waar de glasvezel draden al als kleine spijkertjes in zitten. De folie is aangebracht op een acryle plaat met daar achter de matric van ledverlichting. Als je het kleed dan aanraakt activeer je de foil die dan weet welke ledjes aan moeten gaan. 
+
+Voor dit onderzoek heb ik een paar onderzoeksvragen:
+- #### Kun je de Touchscreenfolie gebruiken met meer mensen?
+- #### Kun je de Touchscreenfolie activeren met heel je hand?
+- #### Waar kun je de Touchscreenfolie aan aansluiten? (Alllen computer of ook arduino/rasberry)
+- #### Wat is de prijs?
+
+
+### Kun je de Touchscreenfolie gebruiken met meer mensen?
+Door de volgende videos van Crystal Display Systems lijkt het wel te doen te zijn dat meer vinger de schermen kunnen aanraken.
+[Video 1](https://www.youtube.com/watch?v=qTnkiDjIwkw)
+[Video 2](https://www.youtube.com/watch?v=oROzLeuFUMY)
+
+Ook deze video van sinotectronicsinc laat zien dat het scherm gebruikt kan worden met meerdere vingers.
+[Video 3](https://www.youtube.com/watch?v=IKWe42lk_sY)
+
+https://crystal-display.com/touchscreen-sensors-touch-panels-and-touch-controllers/
+
+### Kun je de Touchscreenfolie activeren met heel je hand?
+Dit heb ik niet direct kunnen vinden.
+
+### Waar kun je de Touchscreenfolie aan aansluiten? (Alllen computer of ook arduino/rasberry)
+De touch foil is verbonden met een controller, die verantwoordelijk is voor het verwerken van de touch input signalen en het communiceren met het besturingssysteem van het apparaat. De controller interpreteert de touch data en vertaalt deze naar commando's of coördinaten die het systeem kan begrijpen.
+
+- Usb
+  Volgens [Ssidispays](https://ssidisplays.com/touch-foils/#:~:text=Single%20USB%20Connection,board%20on%20your%20Touch%20Foil.) kun je Touchscreenfolie aansluiten doormiddel van een usb.
+
+Je kunt [Starterkits](https://www.sossolutions.nl/raspberry-4b-touchscreen-starterkit) aanschaffen voor de conectie van een touchscreen met Raspberry dus ik ga er van uit dat het ook mogelijk is met een Toutch screen foil.
+
+### Wat is de prijs?
+De prijs van de folie is erg vershcillend en licht ook aan de soort folie die je wilt.
+
+De 3 websites die ik gevonden heb die de Touchscreenfolie verkopen:
+
+https://ssidisplays.com/
+
+https://www.interactivetouch-screen.com/
+
+https://crystal-display.com/
+
+https://www.frontfolies.com/en/
+
+[https://www.exportworldwide.com/nl/](https://www.exportworldwide.com/nl/company/visualplanet/touch-folie-voor-glas-zet-vensters-om-in-aanraakschermen)
+
+https://tycotouch.com/
+
+
+bijna alle prijzen zijn daar op aanvraag behalve bij [Tycotoutch](https://tycotouch.com/) met die informatie ga ik uit van die prijzen en dat verschilt tussen de €100 en €700 licht aan de groote. Op websites zoals aliexpress staan ze ook voor zulke prijsen en af en toe vind je er een voor een stuk goedkoper.
+
+Ik heb de bovengenoemde bedrijven behalve [https://www.exportworldwide.com/nl/](https://www.exportworldwide.com/nl/company/visualplanet/touch-folie-voor-glas-zet-vensters-om-in-aanraakschermen) de volgende mail gemaild:
+
+```
+Subject: Request Regarding Touch Foil Screens for Interactive Project
+
+Dear [Company Name],
+
+I hope you’re doing well. My name is Rianne, and I am currently in my exam year at the St. Joost School of Design and Art. As part of my final project, I am exploring the integration of technology with textiles, and I am particularly interested in the use of touch foil screens.
+
+In this project, I plan to use the touch foil screen in combination with fiber optic threads embedded in a rug, where the foil will trigger LED lights based on touch input.
+
+I have a few questions about your touch foil screens to understand if they are suitable for my project:
+1.	Can the touch foil screen support input from multiple users simultaneously?
+2.	Is it possible to activate the touch foil using the entire hand, or is it limited to just fingers?
+3.	What devices can the touch foil be connected to? (Is it compatible only with computers, or can it also work with microcontrollers like Arduino or Raspberry Pi?)
+4.	Could you provide information on the pricing for your touch foil options?
+5.	Is it possible to activate the touch foil through a layer of material, such as a rug or rubber? In my case, the foil would be placed behind a textile surface, and I would love to know if the touch functionality would still work through such materials.
+
+For reference, you can view a previous project of mine, Bedraden Draden, on my [Instagram](https://www.instagram.com/rianne.schoenmacker/). This project showcases a similar setup, though without capacitive sensors or extensive use of fiber optic wires, which I plan to incorporate into this new design.
+
+I would be grateful if it were possible to receive a test sample or potentially a panel which would be discarded because of any imperfections. This would also be better for the environment and more sustainable. This I can then use to evaluate its performance in the context of my project. 
+
+Thank you for your time and consideration. I look forward to your response.
+
+With kind regards,
+
+Rianne Schoenmacker
+```
+
+
+
