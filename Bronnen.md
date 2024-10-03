@@ -105,3 +105,57 @@ Wearable Media. (2018, 10 december). E-Textile Sensor Experiments: Tufting with 
 
 Charbax. (2017, 15 juli). Peratech 3D force-sensing Touch sensors [Video]. YouTube. https://www.youtube.com/watch?v=J-vrjdvi94w
 
+A Comprehensive to ESP32 Pinout Diagram | Xecor. (z.d.). https://www.xecor.com/blog/esp32-pinout-diagram 
+
+Chris Maher. (2022, 4 november). LED Matrix - Connect, Power & Control - Setup Guide [Video]. YouTube. https://www.youtube.com/watch?v=6XGeM2__Zx4 
+
+Crystal Display Systems. (z.d.). YouTube. https://www.youtube.com/@Crystaldisplays/videos 
+
+Crystal Display Systems. (2021a, juli 30). Touchscreen sensors and controllers, plus customised Touch screens. https://crystal-display.com/touchscreen-sensors-touch-panels-and-touch-controllers/ 
+
+Crystal Display Systems. (2021b, september 2). CDS Display Corner – 27 inch ThruTouch PCAP+ Monitor [Video]. YouTube. https://www.youtube.com/watch?v=oROzLeuFUMY 
+
+Crystal Display Systems. (2023, 13 september). Check Out The NEW! 59.8" Square LCD PCAP Monitor By CDS [Video]. YouTube. https://www.youtube.com/watch?v=qTnkiDjIwkw 
+
+Crystal Display Systems. (2024a, juli 1). IR Infrared Touch screens for industrial interactive displays. https://crystal-display.com/products/ir-touch/ 
+
+Crystal Display Systems. (2024b, juli 9). Analogue Resistive Touch screens for industrial TFT and LCD displays. https://crystal-display.com/products/analogue-resistive-touch/ 
+
+Crystal Display Systems. (2024c, juli 9). PCAP Touch screen Foils. https://crystal-display.com/products/pcap-touch-foils/ 
+
+Crystal Display Systems. (2024d, juli 9). PCAP Touch screen Foils. https://crystal-display.com/products/pcap-touch-foils/ 
+
+Crystal Display Systems. (2024e, juli 25). Open frame industrial Monitors and LCD TFT touchscreen monitors. https://crystal-display.com/products/open-frame-tft-lcd-industrial-monitors/ 
+
+Crystal Display Systems. (2024f, september 27). PCAP Touch Screen Overlays. https://crystal-display.com/products/pcap-touch-screen-overlays/ 
+
+Hacks360. (2021, 29 april). Arduino and ESP32 Serial Communication || UART Communication [Video]. YouTube. https://www.youtube.com/watch?v=_A2KwuiE7Ww 
+
+Newhaven Display International. (z.d.-a). Gereedschap & Accessoires - Aanraakschermen - Newhaven Display. https://newhavendisplay.com/nl/accessories/touch-panels/ 
+
+Newhaven Display International. (z.d.-b). Nieuwe producten | Newhaven Display International. https://newhavendisplay.com/nl/new-products/ Newhaven Display TS-TFT3.5Z. (z.d.). 
+
+Mouser Electronics. https://nl.mouser.com/ProductDetail/Newhaven-Display/TS-TFT35Z?qs=krDt2o00aZdLd0XzHPZz5w%3D%3D&mgh=1&utm_id=20328035028&gad_source=1&gclid=Cj0KCQjwu-63BhC9ARIsAMMTLXRwO5fx_xhRDCmTy6VXTROHWLNs54DkaaOI3mzanIri6x3L3pmkU20aAmDtEALw_wcB 
+
+PCAP Touch Foil - Complete Guide To Interactive Touch Displays For 2021. (z.d.). Two Way Mirrors. https://www.twowaymirrors.com/pcap-foil/ 
+
+Pieters, A. (2022, 5 september). ESP32 – PinOut. https://www.studiopieters.nl/esp32-pinout/ 
+
+Quality Interactive Touch Screen & Touch Foil Screen factory from China. (z.d.). https://www.interactivetouch-screen.com/ 
+
+Santos, R., & Santos, R. (2024, 28 februari). Installing ESP32 in Arduino IDE (Windows, Mac OS X, Linux) | Random Nerd Tutorials. Random Nerd Tutorials. https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/ 
+
+Screen Solutions International. (2024, 26 juli). Enhance Interactive Displays with SSI Touch Foil | SSI Displays. https://ssidisplays.com/touch-foils/ 
+
+Sinotectronics Inc. (z.d.). YouTube. https://www.youtube.com/@sinotectronicsinc.5707 
+
+Sophia. (2023, 8 december). How Does Touch Foil Work? | IVS-Tech. IVS-Tech - Manufacturer Of Touch Panel. https://ivs-t.com/blog/how-touch-foil-works/ 
+
+Touch Foil Screen factory, Buy good quality Touch Foil Screen products from China. (z.d.). Touch Foil Screen factory, Buy good quality Touch Foil Screen products from China. Touch Foil Screen Factory, Buy Good Quality Touch Foil Screen Products From China. https://www.interactivetouch-screen.com/supplier-657201p2-touch-foil-screen 
+
+Touch Foils and Touch Sensors - Touch Screen Technology from Display Technology Ltd. (z.d.). https://www.fortec.uk/solutions/infinite-touch/touch-foils-sensors 
+
+Two Way Mirrors. (2021, 21 maart). PCAP Touch Foil [Projected Capacitive Touch Foil] Complete Guide [Video]. YouTube. https://www.youtube.com/watch?v=5mSxxyDOYAw 
+
+Voor Tp900 Comfort 6ag1 124-0jc01-4ax0 6ag1124-0jc01-4ax0 Aanraakscherm Met Overlay Beschermende Film - AliExpress 7. (z.d.). Aliexpress. https://nl.aliexpress.com/item/1005005558373872.html?spm=a2g0o.detail.pcDetailTopMoreOtherSeller.1.2dd5hvWMhvWM57&gps-id=pcDetailTopMoreOtherSeller&scm=1007.40050.354490.0&scm_id=1007.40050.354490.0&scm-url=1007.40050.354490.0&pvid=6f436105-f86e-4186-825a-3bb08a0c6258&_t=gps-id:pcDetailTopMoreOtherSeller,scm-url:1007.40050.354490.0,pvid:6f436105-f86e-4186-825a-3bb08a0c6258,tpp_buckets:668%232846%238114%231999&isseo=y&pdp_npi=4%40dis%21EUR%2119.24%2115.39%21%21%2121.02%2116.81%21%402103919917272725633433648ead39%2112000033537286149%21rec%21NL%216107286665%21X&utparam-url=scene%3ApcDetailTopMoreOtherSeller%7Cquery_from%3A
+

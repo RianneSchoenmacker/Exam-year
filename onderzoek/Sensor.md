@@ -329,6 +329,13 @@ Waarna hij best accuraat werkte, niet ideaal, maar dat komt waarschijnlijk ook d
     <img src="../images/sensoren/druksensorwerkend2.jpg" alt="Afbeelding 1" width="200"/>    
 </div>
 
+Ik heb geprobeerd de sensor te koppelen aan de licht matrix. Helaas is dit nog zonder succes gegaan. 
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/sensor_ledmatrix.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/sensor_ledmatrix1.jpg" alt="Afbeelding 1" width="200"/>    
+</div>
+
 # Touch Foil Screen
 
 Omdat de kapton + Copper Matrix nog niet helemaal werkt, ben ik begonnen met een onderzoek naar Touch Foil Screens. 
