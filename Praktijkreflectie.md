@@ -9,7 +9,7 @@ Als interactief designer richt ik me op het verbinden van ambacht en technologie
 Tijdens mijn praktijkverkenning voor het studiejaar 2023-2024 heb ik specifieke doelen gesteld die mij helpen bij mijn ontwikkeling als ontwerper. Mijn praktijkplan richt zich op de leerdoelen. Hier is een overzicht van mijn leerdoelen:
 
 #### Onderzoek & Technologie: 
-Ik wil mijn begrip van sensortechnologie, microcontrollers en lichttechnologie verdiepen om interactieve ontwerpen te creëren die zowel technologisch geavanceerd als ambachtelijk zijn. Dit houdt in dat ik onderzoek doe naar hoe traditionele tufttechnieken gecombineerd kunnen worden met moderne technologieën en nieuwe materialen en technologieën verken om innovatieve oplossingen te ontwikkelen.
+Ik wil mijn begrip van sensortechnologie, microcontrollers en lichttechnologie verdiepen om interactieve ontwerpen te creëren die zowel technologisch geavanceerd als ambachtelijk zijn. Dit houdt in dat ik onderzoek doe naar hoe traditionele tuft technieken gecombineerd kunnen worden met moderne technologieën en nieuwe materialen en technologieën verken om innovatieve oplossingen te ontwikkelen.
 
 #### Beeldend Vermogen, Communicatieve Werking en Gebruikservaring: 
 Mijn doel is om mijn ontwerpen zo te ontwikkelen dat ze effectief communiceren en de gebruikservaring optimaliseren. Dit omvat het versterken van mijn ontwerpstijl, het toepassen van effectieve visuele communicatie en storytelling, en het uitvoeren van gebruikersonderzoek om de interactie en ervaring met mijn ontwerpen te verbeteren.
@@ -24,7 +24,7 @@ Tot slot wil ik reflecteren op mijn sterke punten en ontwikkelingsgebieden als o
 
 #### In mijn studie:
 
-- Projectontwikkeling: Ik heb gewerkt tijdens mijn minor aan mijn persoonlijke project Bedraden Draden, waarbij ik technologie en ambacht heb gecombineerd. Dit omvatte het tuftproces, het integreren van sensoren en LED-verlichting, en het verkennen van innovatieve materialen zoals lichtgevende garens en fiber optic draden.
+- Projectontwikkeling: Ik heb gewerkt tijdens mijn minor aan mijn persoonlijke project Bedraden Draden, waarbij ik technologie en ambacht heb gecombineerd. Dit omvatte het tuft proces, het integreren van sensoren en LED-verlichting, en het verkennen van innovatieve materialen zoals lichtgevende garens en fiber optic draden.
 - Digitale en fysieke ontwerpstudies: Ik heb mijn projecten verder uitgewerkt door gebruik te maken van digitale tools zoals Blender en Spline.
 - Reflectie en Documentatie: Ik heb mijn werk en ervaringen gedocumenteerd en geanalyseerd. Dit omvat het bijhouden van mijn voortgang, reflecties op mijn ontwerpen en de feedback die ik heb ontvangen.
 
