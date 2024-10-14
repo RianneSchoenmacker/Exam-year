@@ -159,3 +159,46 @@ Two Way Mirrors. (2021, 21 maart). PCAP Touch Foil [Projected Capacitive Touch F
 
 Voor Tp900 Comfort 6ag1 124-0jc01-4ax0 6ag1124-0jc01-4ax0 Aanraakscherm Met Overlay Beschermende Film - AliExpress 7. (z.d.). Aliexpress. https://nl.aliexpress.com/item/1005005558373872.html?spm=a2g0o.detail.pcDetailTopMoreOtherSeller.1.2dd5hvWMhvWM57&gps-id=pcDetailTopMoreOtherSeller&scm=1007.40050.354490.0&scm_id=1007.40050.354490.0&scm-url=1007.40050.354490.0&pvid=6f436105-f86e-4186-825a-3bb08a0c6258&_t=gps-id:pcDetailTopMoreOtherSeller,scm-url:1007.40050.354490.0,pvid:6f436105-f86e-4186-825a-3bb08a0c6258,tpp_buckets:668%232846%238114%231999&isseo=y&pdp_npi=4%40dis%21EUR%2119.24%2115.39%21%21%2121.02%2116.81%21%402103919917272725633433648ead39%2112000033537286149%21rec%21NL%216107286665%21X&utparam-url=scene%3ApcDetailTopMoreOtherSeller%7Cquery_from%3A
 
+# Gebruikersonderzoek
+
+Alles over hoge werkdruk en werkstress : NN. (z.d.). https://www.nn.nl/Zakelijk/Werkgever/Verzuimoorzaak-werkdruk-en-werkstress.htm#:~:text=Hoeveel%20mensen%20in%20Nederland%20ervaren,als%20reden%20voor%20het%20verzuim.
+
+Angst voor de tandarts. (z.d.). https://www.allesoverhetgebit.nl/alles-over-mondgezondheid/tips-voor-een-gezond-gebit/angst-voor-de-tandarts
+
+Awel. (z.d.). Awel. https://awel.be/
+Bewegen voor je brein. (2023, 8 augustus). Wat doet stress met onze hersenen? - Bewegen voor je brein. Bewegen Voor Je Brein. https://bewegenvoorjebrein.nl/wat-doet-stress-met-onze-hersenen/
+
+Burton, J., & Burton, J. (2024, 27 september). Decorate to De-stress: 10 Ways Design Can Reduce Stress. MQ Mental Health Research. https://www.mqmentalhealth.org/decorate-to-de-stress-10-ways-design-can-reduce-stress/#:~:text=Interior%20design%20can%20play%20a,productivity%2C%20engagement%2C%20and%20retention.
+
+Hersenstichting. (2024, 27 mei). Ontspanning - Hersenstichting. https://www.hersenstichting.nl/de-hersenen/gezonde-hersenen/ontspanning/
+
+Hoe beïnvloedt kleur ons welzijn gebaseerd op de kleurenpsychologie? - Rockfon Colours of Wellbeing. (2021, 20 februari). Rockfon Colours Of Wellbeing. https://rockfoncolours.com/nl/de-psychologie-van-kleur/
+
+Hoe kan ik een ander helpen? | Nederlands Jeugdinstituut. (z.d.). https://www.nji.nl/sociale-steun/hoe-kan-ik-een-ander-helpen
+
+How We Play - National Institute for Play. (2024, 20 mei). National Institute For Play. https://nifplay.org/what-is-play/types-of-play/
+
+Ik wil beter omgaan met stress | Thuisarts.nl. (2022, 7 april). https://www.thuisarts.nl/stress/ik-wil-beter-omgaan-met-stress
+
+Michalik, J. (2024, 8 mei). Stress. Mentaal Vitaal. https://www.mentaalvitaal.nl/problemen-oplossen/stress
+
+Noknok. (z.d.). Nok Nok, goed in je vel. noknok.be. https://www.noknok.be/
+
+Psyned. (2024a, september 9). Soorten angst: waar kun je allemaal bang voor zijn? | Psyned. https://www.psyned.nl/angsten/soorten-angst/#:~:text=Dit%20kan%20een%20situatie%2C%20ding,%2C%20clowns%2C%20bloed%20of%20spinnen.
+
+Psyned. (2024b, september 11). Stress: alles wat je wil weten over spanning | Psyned. https://www.psyned.nl/stress/
+
+Vlaams instituut Gezond Leven. (2023, 22 februari). Iemand anders helpen. Geluksdriehoek.be. https://geluksdriehoek.be/iemand-anders-helpen
+
+Waarom ben ik zo vaak boos? | Nederlands Jeugdinstituut. (z.d.). https://www.nji.nl/gedragsproblemen/waarom-ben-ik-zo-vaak-boos
+
+Waarom positieve emoties zo belangrijk zijn. (2021, 5 juli). Universiteit Leiden. https://www.universiteitleiden.nl/nieuws/2021/07/waarom-positieve-emoties-zo-belangrijk-zijn
+
+Wallsauce. (2024a, mei 14). Kleurentherapie: hoe het de geestelijke gezondheid verbetert | Wallsauce NL. Wallsauce Photo Wallpaper Murals. https://www.wallsauce.com/nl/blog/colour-therapy-home-mental-health?srsltid=AfmBOorkxF7ooIaKvtSrwx2iYfOx5Rxhqh4c1zhl4LBWenPW39T_81T6
+
+Wallsauce. (2024b, mei 14). Kleurentherapie: hoe het de geestelijke gezondheid verbetert | Wallsauce NL. Wallsauce Photo Wallpaper Murals. https://www.wallsauce.com/nl/blog/colour-therapy-home-mental-health?srsltid=AfmBOorkxF7ooIaKvtSrwx2iYfOx5Rxhqh4c1zhl4LBWenPW39T_81T6
+
+Wellness. (2023, 14 maart). De voordelen van kleuren voor volwassenen tegen stress. Scholistico Nederlands. https://nl.scholistico.com/voordelen-kleuren-voor-volwassenen-stress/#:~:text=Sommige%20mensen%20vinden%20dat%20koele,voor%20jou%20het%20beste%20werken.
+
+Wandelen tegen stress: neem een ‘natuurpil’. (2024, 23 januari). https://www.pggmenco.nl/gezond-leven/bewegen/wandelen-tegen-stress-neem-een-natuurpil/#:~:text=Kort%20buiten%20wandelen%20helpt%20al%20tegen%20stress&text=Minder%20bekend%20is%20dat%20zelfs,het%20dalen%2C%20maar%20minder%20hard.
+
