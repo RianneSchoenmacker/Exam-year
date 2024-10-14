@@ -34,7 +34,7 @@ Met mijn producten wil ik mensen de mogelijkheid bieden om stil te staan bij hun
     - Hoe kan ik iemand helpen?
     - Welke producten bestaan er al en/of welke designers zijn hier mee bezig?
     - Hoe helpt vormgeving tegen stress?
-3. Bronnen
+
 
 ## Mijn Hoofdvraag:
 
@@ -443,13 +443,3 @@ Het idee is om een omgeving of product te creëren waarin mensen worden uitgenod
 
 In dit onderzoek heb ik aangetoond dat het creëren van fysieke, interactieve objecten een effectieve manier is om mensen te ondersteunen in stressvolle situaties. Mijn antwoord op de hoofdvraag is dat dergelijke producten, door bewustzijn en reflectie te bevorderen, mensen helpen om beter om te gaan met spanning en hen in staat stellen om met meer kalmte hun dagelijkse leven voort te zetten.
 
-
-## Bronnen
-
-- [NN](https://www.nn.nl/Zakelijk/Werkgever/Verzuimoorzaak-werkdruk-en-werkstress.htm)
-- [Alles over het gebit](https://www.allesoverhetgebit.nl/alles-over-mondgezondheid/tips-voor-een-gezond-gebit/angst-voor-de-tandarts)
-- [Bewegen voor je brein](https://bewegenvoorjebrein.nl/wat-doet-stress-met-onze-hersenen/)
-- [Rockfon Colours of Wellbeing](https://rockfoncolours.com/nl/de-psychologie-van-kleur/)
-- [Thuisarts.nl](https://www.thuisarts.nl/stress/ik-wil-beter-omgaan-met-stress)
-- [Psyned](https://www.psyned.nl/stress/)
-- [Hersenstichting](https://www.hersenstichting.nl/de-hersenen/gezonde-hersenen/ontspanning/)
