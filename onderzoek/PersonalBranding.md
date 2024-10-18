@@ -1,4 +1,11 @@
 # Creative personal branding
+
+In het boek *Personal Creative Branding* verkent Jürgen Salenbacher de kracht van persoonlijke merkontwikkeling binnen de creatieve industrie. Het boek helpt lezers niet alleen om zichzelf te positioneren in een steeds veranderende markt, maar ook om hun innerlijke creatieve potentieel te ontdekken en te benutten. Door middel van diepgaande analyses, reflectieve vragen, en praktische voorbeelden, biedt Salenbacher een raamwerk waarmee creatieven hun professionele en persoonlijke identiteit kunnen vormgeven en versterken.
+
+Dit boek legt de nadruk op het belang van visie, missie, en strategie in het ontwikkelen van een consistent en authentiek persoonlijk merk. Het roept lezers op om na te denken over hun kernwaarden en de trends die hun industrie beïnvloeden, en hoe ze hun unieke vaardigheden kunnen inzetten om succesvol te navigeren in een snel veranderende omgeving.
+
+In dit document deel ik mijn persoonlijke antwoorden op enkele van de reflectieve vragen die door het boek worden gesteld. Deze antwoorden geven inzicht in de veranderingen in mijn industrie en de kansen en uitdagingen die zich in de toekomst kunnen voordoen.
+
 ## 1.a, on the three most important changes in your industry and in your market over the last fifteen years?
 
 **Duurzaamheid en eco-bewust ontwerp:**
