@@ -184,10 +184,6 @@ Bij het testen in de progressing werkte het een beetje maar hij leek niet accura
     <img src="../images/sensoren/druksensormaken1n.jpg"    alt="Afbeelding 1" width="200"/>  
 </div>
 
-<video width="320" height="240" controls>
-  <source src="../images/sensoren/druksensormaken1ntest.mp4" type="video/mp4">
-</video>
-
 Omdat de rijen 'floating' zijn wat storingen veroorzaakte. Om dit te proberen te voorkomen, heb ik deze rijen via een weerstand verbonden met de ground pin. Door de weerstand ontstaat een 'pull-down' effect, dat ervoor zorgt dat de rijen standaard een lage (0V) spanning hebben wanneer ze niet actief worden aangestuurd.
 
 <div style="display: flex; justify-content: space-between;">
@@ -197,7 +193,7 @@ Omdat de rijen 'floating' zijn wat storingen veroorzaakte. Om dit te proberen te
 
 Dit is de code die ik hierbij gebruikte heb om het te laten werken.
 
-##### Arduino
+##### Arduino IDE
 ```
 /*
 Matrix: Kapton + Copper
@@ -340,6 +336,421 @@ Ik heb geprobeerd de sensor te koppelen aan de licht matrix. Helaas is dit nog z
     <img src="../images/sensoren/sensor_ledmatrix1.jpg" alt="Afbeelding 1" width="200"/>    
 </div>
 
+Omdat dit zonder succes is gegaan ben ik met kleinere stapjes begonnen door de LED matrix eerst aan te sluiten op een knop in combinatie met een Arduino.
+
+## Arduino
+### Knop
+
+Ik heb de knop geconnect aan de Arduino en met de de volgende code kon ik nu een led aan en uit zetten;
+
+```
+#include <Adafruit_NeoPixel.h>
+
+// Pin definities
+#define PIN 6           // Pin verbonden met de NeoPixel data in
+#define BUTTON_PIN 2    // Pin verbonden met de knop
+
+
+// NeoPixel matrix grootte
+#define NUMPIXELS 256   // 16x16 matrix = 256 pixels
+#define BRIGHTNESS 50   // Pas de helderheid aan (0-255)
+
+// Maak een instance van de NeoPixel
+Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
+// Variabele voor de knopstatus
+bool ledsOn = false;
+
+// Variabele om de specifieke LED index te kiezen (bijv. LED op rij 5, kolom 5)
+int row = 5;
+int col = 5;
+int ledIndex = (row * 16) + col; // Bereken de LED index voor rij 5, kolom 5
+
+void setup() {
+  // Initializeer de NeoPixel
+  pixels.begin();
+  pixels.setBrightness(BRIGHTNESS); // Optioneel: pas de helderheid aan
+  pixels.show();  // Initialiseert alle pixels naar 'uit'
+
+  // Instellen van de knop pin
+  pinMode(BUTTON_PIN, INPUT_PULLUP);  // Interne pull-up resistor gebruiken
+}
+
+void loop() {
+  // Lees de knopstatus (LOW betekent ingedrukt door de interne pull-up resistor)
+  int buttonState = digitalRead(BUTTON_PIN);
+
+  // Controleer of de knop is ingedrukt
+  if (buttonState == LOW) {
+    // Wacht even om te voorkomen dat het contact blijft stuiteren
+    delay(50);
+
+    // Wissel de status van de LEDs
+    ledsOn = !ledsOn;
+
+    // Als de LEDs aan moeten gaan
+    if (ledsOn) {
+      pixels.setPixelColor(ledIndex, pixels.Color(255, 0, 0)); // Zet de specifieke LED op rood
+    } else { // Als de LEDs uit moeten gaan
+      pixels.clear(); // Alle LEDs uit
+    }
+    pixels.show(); // Toon de nieuwe status
+
+    // Wacht totdat de knop wordt losgelaten om opnieuw te kunnen activeren
+    while (digitalRead(BUTTON_PIN) == LOW) {
+      delay(10); // Anti-bounce
+    }
+  }
+}
+```
+Vervolgens wilde in de 4 leds in het midden aan zetten en bij elke klik alles uit zetten en bij de volgende klik de aansluitende Leds us 4x4 leds aan zetten enz..
+
+Omdat de leds optellen in een zig zag patroon moest ik dus zorgen dat er in de code juist vermeld staat dat de juiste leds aan gaan.
+
+De volledige code hiervoor is:
+
+```
+#include <Adafruit_NeoPixel.h>
+
+// Pin definities
+#define PIN 6           // Pin verbonden met de NeoPixel data in
+#define BUTTON_PIN 2    // Pin verbonden met de knop
+
+
+// NeoPixel matrix grootte
+#define NUMPIXELS 256   // 16x16 matrix = 256 pixels
+#define BRIGHTNESS 50   // Pas de helderheid aan (0-255)
+
+// Maak een instance van de NeoPixel
+Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
+// Variabele voor de knopstatus
+bool ledsOn = false;
+
+// Huidig niveauc:\Users\riann\OneDrive\Documenten\Studie\St joost\Leerjaar 4\Eigenproject semester 7\Arduino\sensor\pressure_sensor.ino\pressure_sensor.ino.ino van het blokje
+int level = 1; // Begin met een 3x3 blokje
+
+void setup() {
+  // Initializeer de NeoPixel
+  pixels.begin();
+  pixels.setBrightness(BRIGHTNESS); // Optioneel: pas de helderheid aan
+  pixels.show();  // Initialiseert alle pixels naar 'uit'
+
+  // Instellen van de knop pin
+  pinMode(BUTTON_PIN, INPUT_PULLUP);  // Interne pull-up resistor gebruiken
+}
+
+void loop() {
+  // Lees de knopstatus (LOW betekent ingedrukt door de interne pull-up resistor)
+  int buttonState = digitalRead(BUTTON_PIN);
+
+  // Controleer of de knop is ingedrukt
+  if (buttonState == LOW) {
+    // Wacht even om te voorkomen dat het contact blijft stuiteren
+    delay(50);
+
+// Wissel de status van de LEDs
+    if (ledsOn) {
+      // Als de LEDs aan zijn, maak ze uit
+      pixels.clear();
+      ledsOn = false;
+    } else {
+      // Als de LEDs uit zijn, maak ze aan
+      ledsOn = true;
+
+      // Bepaal de grootte van het blokje
+      int size = level * 2; // Groottes: 3, 5, 7, ...
+
+      // Beginpositie voor het blokje in het midden van de matrix
+      int startRow = 8 - (size / 2); // Start rij
+      int startCol = 8 - (size / 2); // Start kolom
+
+      // Loop door de rijen en kolommen om het blokje aan te zetten
+      for (int row = startRow; row < startRow + size; row++) {
+        for (int col = startCol; col < startCol + size; col++) {
+          int ledIndex;
+          // Bepaal de index afhankelijk van of de rij even of oneven is
+          if (row % 2 == 0) {
+            // Even rij: van links naar rechts
+            ledIndex = (row * 16) + col; // Bereken de LED index voor elke rij en kolom
+          } else {
+            // Oneven rij: van rechts naar links
+            ledIndex = (row * 16) + (15 - col); // Bereken de LED index voor elke rij en kolom
+          }
+          pixels.setPixelColor(ledIndex, pixels.Color(255, 0, 0)); // Zet de specifieke LED op rood
+        }
+      }
+
+      // Verhoog het niveau voor de volgende keer
+      level++;
+      if (level > 8) { // Reset als het niveau hoger is dan 3 (7x7 blokje)
+        level = 1;
+      }
+    }
+
+    pixels.show(); // Toon de nieuwe status
+
+    // Wacht totdat de knop wordt losgelaten om opnieuw te kunnen activeren
+    while (digitalRead(BUTTON_PIN) == LOW) {
+      delay(10); // Anti-bounce
+    }
+  }
+}
+```
+
+In afbeeldingen hoe dit er dan uit ziet:
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/knop_ledmatrix_arduino.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/2x2knop.png" alt="Afbeelding 1" width="200"/>    
+    <img src="../images/sensoren/0knop.png" alt="Afbeelding 1" width="200"/>  
+    <img src="../images/sensoren/4x4knop.png" alt="Afbeelding 1" width="200"/>  
+</div>
+
+Toen dit gelukt was met een knop probeerde ik het met een druk sensor
+
+### Druk sensor
+
+Het doel hiervan was het zelfde met de knop maar dan met druk. Hoe meer druk je uit oefent hoe groter het vlak word die aan staat.
+
+Ik heb dit weer in kleine stapjes aangepakt dus eerst een led laten aan gaan en daarna gezorgd dat hij groter werd door de druk.
+
+De uiteindelijke code hiervoor is:
+
+```
+#include <Adafruit_NeoPixel.h>
+
+// Pin definities
+#define PIN 6           // Pin verbonden met de NeoPixel data in
+#define PRESSURE_PIN A0    // Pin verbonden met de knop
+
+
+// NeoPixel matrix grootte
+#define NUMPIXELS 256   // 16x16 matrix = 256 pixels
+#define BRIGHTNESS 50   // Pas de helderheid aan (0-255)
+
+// Maak een instance van de NeoPixel
+Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
+// Drempelwaarden voor druk
+#define THRESHOLD_1 100 // Drempelwaarde voor 2x2 blok
+#define THRESHOLD_2 200  // Drempelwaarde voor 4x4 blok
+#define THRESHOLD_3 300 // Drempelwaarde voor 6x6 blok
+#define THRESHOLD_4 400  // Drempelwaarde voor 8x8 blok
+#define THRESHOLD_5 500  // Drempelwaarde voor 10x10 blok
+#define THRESHOLD_6 600  // Drempelwaarde voor 12x12 blok
+#define THRESHOLD_7 700  // Drempelwaarde voor 14x14 blok
+#define THRESHOLD_8 800  // Drempelwaarde voor 16x16 blok
+
+
+void setup() {
+  // Initializeer de NeoPixel
+  pixels.begin();
+  pixels.setBrightness(BRIGHTNESS); // Optioneel: pas de helderheid aan
+  pixels.show();  // Initialiseert alle pixels naar 'uit'
+  Serial.begin(9600); // Initialiseer de seriële monitor
+}
+
+void loop() {
+   int pressureValue = analogRead(PRESSURE_PIN); // Lees de waarde van de druk sensor
+
+  // Print de waarde van de sensor naar de seriële monitor
+  Serial.print("Pressure Value: ");
+  Serial.println(pressureValue);
+
+  // Controleer de druk en bepaal de grootte van het blokje
+  if (pressureValue > THRESHOLD_8) {
+    // 16x16 block
+    setBlock(0, 0, 16);
+  } else if (pressureValue > THRESHOLD_7) {
+    // 14x14 block
+    setBlock(1, 1, 14);
+  } else if (pressureValue > THRESHOLD_6) {
+    // 12x12 block
+    setBlock(2, 2, 12);
+  } else if (pressureValue > THRESHOLD_5) {
+    // 10x10 block
+    setBlock(3, 3, 10);
+  } else if (pressureValue > THRESHOLD_4) {
+    // 8x8 block
+    setBlock(4, 4, 8);
+  } else if (pressureValue > THRESHOLD_3) {
+    // 6x6 block
+    setBlock(5, 5, 6);
+  } else if (pressureValue > THRESHOLD_2) {
+    // 4x4 block
+    setBlock(6, 6, 4);
+  } else if (pressureValue > THRESHOLD_1) {
+    // 2x2 block
+    setBlock(7, 7, 2);
+  } else {
+    // Geen druk, maak alle LEDs uit
+    pixels.clear();
+  }
+
+  pixels.show(); // Toon de nieuwe status
+  delay(100); // Kleine vertraging voor stabiliteit
+}
+
+// Functie om een blok LED's in te schakelen
+void setBlock(int startRow, int startCol, int size) {
+  for (int row = startRow; row < startRow + size; row++) {
+    for (int col = startCol; col < startCol + size; col++) {
+      int ledIndex = (row * 16) + col; // Bereken de LED-index
+      pixels.setPixelColor(ledIndex, pixels.Color(255, 0, 0)); // Zet de specifieke LED op rood
+    }
+  }
+}
+```
+In afbeeldingen is dit niet goed te zien dus ik ben nog aan het bedenken hoe ik de video's hier kan uploaden of het best naar kan verwijzen.
+
+Toen dit allemaal gelukt was ben ik begonnen met het connecten van een distance sensor.
+
+### Distance sensor
+
+De distance sensor code lijkt heel erg op de druk sensor alleen gaat het alleen niet om kracht maar afstand. 
+
+Dit is de code die ik hiervoor uiteindelijk gebruikt heb:
+
+```
+#include <Adafruit_NeoPixel.h>
+
+// Pin definities
+#define PIN 6           // Pin verbonden met de NeoPixel data in
+#define TRIG_PIN 9      // Pin verbonden met de Trig pin van de afstandssensor
+#define ECHO_PIN 10     // Pin verbonden met de Echo pin van de afstandssensor
+
+// NeoPixel matrix grootte
+#define NUMPIXELS 256   // 16x16 matrix = 256 pixels
+#define BRIGHTNESS 50   // Pas de helderheid aan (0-255)
+
+// Maak een instance van de NeoPixel
+Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
+// Drempelwaarden voor afstand
+#define THRESHOLD_1 5 // Drempelwaarde voor 2x2 blok
+#define THRESHOLD_2 10 // Drempelwaarde voor 4x4 blok
+#define THRESHOLD_3 15 // Drempelwaarde voor 6x6 blok
+#define THRESHOLD_4 20  // Drempelwaarde voor 8x8 blok
+#define THRESHOLD_5 25  // Drempelwaarde voor 10x10 blok
+#define THRESHOLD_6 30  // Drempelwaarde voor 12x12 blok
+#define THRESHOLD_7 35  // Drempelwaarde voor 14x14 blok
+#define THRESHOLD_8 40  // Drempelwaarde voor 16x16 blok
+
+// Variabele om de grootte van het blok te bewaren
+int currentSize = 0;
+
+void setup() {
+  Serial.begin(9600);
+  pixels.begin(); // Initialiseer de NeoPixel matrix
+  pixels.setBrightness(BRIGHTNESS);
+  
+  // Pin modes instellen
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+}
+
+void loop() {
+  // Afstand meten
+  long afstand = meetAfstand();
+  Serial.print("Afstand: ");
+  Serial.println(afstand);
+
+  // Afstand lezen en omzetten naar een blokgrootte
+  if (afstand < THRESHOLD_1) {
+    currentSize = 16; // 16x16 blok
+  } else if (afstand < THRESHOLD_2) {
+    currentSize = 14; // 14x14 blok
+  } else if (afstand < THRESHOLD_3) {
+    currentSize = 12; // 12x12 blok
+  } else if (afstand < THRESHOLD_4) {
+    currentSize = 10; // 10x10 blok
+  } else if (afstand < THRESHOLD_5) {
+    currentSize = 8;  // 8x8 blok
+  } else if (afstand < THRESHOLD_6) {
+    currentSize = 6;  // 6x6 blok
+  } else if (afstand < THRESHOLD_7) {
+    currentSize = 4;  // 4x4 blok
+  } else if (afstand < THRESHOLD_8) {
+    currentSize = 2;  // 2x2 blok
+  } else {
+    currentSize = 0;  // Geen blok als de afstand te groot is
+  }
+
+  // De LED matrix aansturen op basis van de grootte van currentSize
+  tekenBlok(currentSize);
+  delay(500); // Korte vertraging om overbelasting van de seriële monitor te voorkomen
+}
+
+long meetAfstand() {
+  // Trigger de afstandssensor
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+
+  // Lees de echo tijd
+  long duration = pulseIn(ECHO_PIN, HIGH);
+  // Bereken de afstand in cm (de snelheid van geluid is 34300 cm/s)
+  long afstand = duration * 0.034 / 2; 
+  return afstand;
+}
+
+// Functie om een blok LED's in te schakelen
+void setBlock(int startRow, int startCol, int size) {
+  for (int row = 0; row < size; row++) {
+    for (int col = 0; col < size; col++) {
+      int ledIndex = ((startRow + row) * 16) + (startCol + col); // Bereken de LED-index
+      pixels.setPixelColor(ledIndex, pixels.Color(255, 0, 0)); // Zet de specifieke LED op rood
+    }
+  }
+}
+
+void tekenBlok(int size) {
+  pixels.clear(); // Wis de matrix
+
+  if (size > 0) {
+    int startRow = (16 - size) / 2; // Bepaal de start rij
+    int startCol = (16 - size) / 2; // Bepaal de start kolom
+    setBlock(startRow, startCol, size); // Roep de functie aan om het blok in te schakelen
+  }
+  
+  pixels.show(); // Update de LED matrix
+}
+```
+In afbeeldingen hoe dit er dan uit ziet:
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/afstandsensor_ledmatrix_arduino.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/0afstand.png" alt="Afbeelding 1" width="200"/>    
+    <img src="../images/sensoren/4x4afstand.png" alt="Afbeelding 1" width="200"/>  
+    <img src="../images/sensoren/10x10afstand.png" alt="Afbeelding 1" width="200"/>  
+</div>
+
+Toen ik begreep hoe het werkt wilde ik dit op mijn esp gaan proberen.
+
+## Esp
+### knop
+
+Dit bleek alleen moeilijker dan verwacht en ik begrijp niet helemaal waarom. Bij onderzoek LED kun je zien hoe ik alle leds heb aan gekregen via de esp. [Linktekst](/onderzoek/LED.md#led-matrix-aansluiten-esp) 
+
+Ik ben dit dus nog kleiner gaan aanpakken en ik heb de esp op een kop aangesloten en 1 led lampje. Dit heb ik gedaan door een tutorial te volgen van Robojax [video](https://www.youtube.com/watch?v=_tLesIbpB8U) Zo is het mij gelukt om de knop te gebruiken voor Toggle LED, Push ON, Push OFF.
+
+In afbeeldingen hoe dit er dan uit ziet:
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/esp_knop.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/espknop.png" alt="Afbeelding 1" width="200"/>    
+    <img src="../images/sensoren/espknop1.png" alt="Afbeelding 1" width="200"/>  
+    <img src="../images/sensoren/espknopmonitor.png" alt="Afbeelding 1" width="200"/>  
+</div>
+
+Op de laatste afbeelding zie je ook dat ik kon zien wanneer de knop uit stond en aan.
+
+Omdat dit lukte wilde ik de led matix er aan toevoegen in plaats van dat ene led lichtje. Helaas is dit nog zonder succes gegaan en ben ik nog druk mee bezig.
+
+
 # Touch Foil Screen
 
 Omdat de kapton + Copper Matrix nog niet helemaal werkt, ben ik begonnen met een onderzoek naar Touch Foil Screens. 
@@ -428,5 +839,5 @@ With kind regards,
 Rianne Schoenmacker
 ```
 
-
+Helaas heb ik geen antwoord gehad van de bovenstaande bedrijven.
 

@@ -70,7 +70,6 @@ Ik heb het kleed eerst gelijmd met latex lijm dit droogt doorzichtig op.
     <img src="../images/licht/glasvezellijm.jpg" alt="Afbeelding 1" width="200"/>
 </div>
 
-
 Toen dit opgedroogd was heb ik flexibele matrix hierachter geplaatst om te zien hoe het licht er doorheen ging. Het voordeel van de flexibele matrix is dat hij meer ledjes heeft en daarom dus meer oppervlakte van het kleed belicht.
 
 <div style="display: flex; justify-content: space-between;">
@@ -84,6 +83,60 @@ De volgende foto's zijn van de zelfde test maar dan met een plexiglas plaat tuss
 <div style="display: flex; justify-content: space-between;">
     <img src="../images/licht/matrixlichtkleed3.jpg" alt="Afbeelding 1" width="200"/>
     <img src="../images/licht/matrixlichtkleed2.jpg" alt="Afbeelding 2" width="200"/>
+</div>
+
+# Led matrix aansluiten esp
+
+## Esp
+
+Toen het aansluiten op de Arduino gelukt was wilde ik dit gaan proberen met de Esp. Dit bleek alleen moeilijker dan verwacht.
+Het eerste waar ik achter gekomen ben is dat de library *Adafruit_NeoPixel.h* niet werkt op de esp maar *FastLED.h* wel. Ook levert de esp maar 3.3V wat niet genoeg is voor de LED matrix die heeft namelijk 5V nodig. 
+
+Om dit op te lossen heb ik de stroom vanuit de Arduino gebruikt voor de LED matrix en de esp als Arduino op een common ground gezet. Hierdoor krijgt de matrix genoeg stroom en kan de esp deze aansturen. dit heb ik gedaan door de matrix volledig aan te zetten. Hieronder zie je hiervan de code. De rest van dit onderzoek kun je lezen onder sensoren omdat ik voor de besturing van de Led matrix ook knoppen, distance- en druk sensoren ben gaan gebruiken. [Linktekst](/onderzoek/Sensor.md#arduino)
+
+### volledig
+
+```
+#include <FastLED.h>
+
+#define LED_PIN     14
+#define NUMPIXELS   256  // 16x16 matrix
+#define BRIGHTNESS  20
+
+CRGB leds[NUMPIXELS];
+
+void setup() {
+  Serial.begin(115200);
+  FastLED.addLeds<NEOPIXEL, LED_PIN>(leds, NUMPIXELS);
+  FastLED.setBrightness(BRIGHTNESS);
+  fill_solid(leds, NUMPIXELS, CRGB(0, 255, 0));
+  FastLED.show();
+  Serial.println("Yea 2");
+}
+
+void loop() {
+
+}
+```
+
+## Lichtplaat
+
+Ik heb kleine testjes gemaakt met een Lichtplaat en kleur folie.
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/licht/lichtplaatwit.png" alt="Afbeelding 1" width="200"/>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/licht/lichtplaatrood.png" alt="Afbeelding 1" width="200"/>
+    <img src="../images/licht/lichtplaatblauw.png" alt="Afbeelding 2" width="200"/>
+    <img src="../images/licht/lichtplaatgeel.png" alt="Afbeelding 2" width="200"/>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/licht/lichtplaatgroen.png" alt="Afbeelding 1" width="200"/>
+    <img src="../images/licht/lichtplaatoranje.png" alt="Afbeelding 2" width="200"/>
+    <img src="../images/licht/lichtplaatpaars.png" alt="Afbeelding 2" width="200"/>
 </div>
 
 
