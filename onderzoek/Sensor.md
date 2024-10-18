@@ -184,6 +184,10 @@ Bij het testen in de progressing werkte het een beetje maar hij leek niet accura
     <img src="../images/sensoren/druksensormaken1n.jpg"    alt="Afbeelding 1" width="200"/>  
 </div>
 
+<video width="320" height="240" controls>
+  <source src="../images/sensoren/druksensormaken1ntest.mp4" type="video/mp4">
+</video>
+
 Omdat de rijen 'floating' zijn wat storingen veroorzaakte. Om dit te proberen te voorkomen, heb ik deze rijen via een weerstand verbonden met de ground pin. Door de weerstand ontstaat een 'pull-down' effect, dat ervoor zorgt dat de rijen standaard een lage (0V) spanning hebben wanneer ze niet actief worden aangestuurd.
 
 <div style="display: flex; justify-content: space-between;">
