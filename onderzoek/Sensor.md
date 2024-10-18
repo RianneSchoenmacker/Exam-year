@@ -733,7 +733,7 @@ Toen ik begreep hoe het werkt wilde ik dit op mijn esp gaan proberen.
 ## Esp
 ### knop
 
-Dit bleek alleen moeilijker dan verwacht en ik begrijp niet helemaal waarom. Bij onderzoek LED kun je zien hoe ik alle leds heb aan gekregen via de esp. [Linktekst](/onderzoek/LED.md#led-matrix-aansluiten-esp) 
+Dit bleek alleen moeilijker dan verwacht en ik begrijp niet helemaal waarom. Bij onderzoek LED kun je zien hoe ik alle leds heb aan gekregen via de esp. [ONDERZOEK LED](/onderzoek/LED.md#led-matrix-aansluiten-esp) 
 
 Ik ben dit dus nog kleiner gaan aanpakken en ik heb de esp op een kop aangesloten en 1 led lampje. Dit heb ik gedaan door een tutorial te volgen van Robojax [video](https://www.youtube.com/watch?v=_tLesIbpB8U) Zo is het mij gelukt om de knop te gebruiken voor Toggle LED, Push ON, Push OFF.
 

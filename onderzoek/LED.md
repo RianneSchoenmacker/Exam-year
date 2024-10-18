@@ -92,7 +92,7 @@ De volgende foto's zijn van de zelfde test maar dan met een plexiglas plaat tuss
 Toen het aansluiten op de Arduino gelukt was wilde ik dit gaan proberen met de Esp. Dit bleek alleen moeilijker dan verwacht.
 Het eerste waar ik achter gekomen ben is dat de library *Adafruit_NeoPixel.h* niet werkt op de esp maar *FastLED.h* wel. Ook levert de esp maar 3.3V wat niet genoeg is voor de LED matrix die heeft namelijk 5V nodig. 
 
-Om dit op te lossen heb ik de stroom vanuit de Arduino gebruikt voor de LED matrix en de esp als Arduino op een common ground gezet. Hierdoor krijgt de matrix genoeg stroom en kan de esp deze aansturen. dit heb ik gedaan door de matrix volledig aan te zetten. Hieronder zie je hiervan de code. De rest van dit onderzoek kun je lezen onder sensoren omdat ik voor de besturing van de Led matrix ook knoppen, distance- en druk sensoren ben gaan gebruiken. [Linktekst](/onderzoek/Sensor.md#arduino)
+Om dit op te lossen heb ik de stroom vanuit de Arduino gebruikt voor de LED matrix en de esp als Arduino op een common ground gezet. Hierdoor krijgt de matrix genoeg stroom en kan de esp deze aansturen. dit heb ik gedaan door de matrix volledig aan te zetten. Hieronder zie je hiervan de code. De rest van dit onderzoek kun je lezen onder sensoren omdat ik voor de besturing van de Led matrix ook knoppen, distance- en druk sensoren ben gaan gebruiken. [ONDERZOEK SENSOR](/onderzoek/Sensor.md#arduino)
 
 ### volledig
 
