@@ -748,7 +748,383 @@ In afbeeldingen hoe dit er dan uit ziet:
 
 Op de laatste afbeelding zie je ook dat ik kon zien wanneer de knop uit stond en aan.
 
-Omdat dit lukte wilde ik de led matix er aan toevoegen in plaats van dat ene led lichtje. Helaas is dit nog zonder succes gegaan en ben ik nog druk mee bezig.
+Omdat dit lukte wilde ik de led matix toevoegen aan de esp met button in plaats van dat ene led lichtje. Dit koste wat moeite maar is uiteindelijk gelukt. De reden dat het niet werkte kwam door een fout in de FastLED library door even goed zoeken op Reddit heb ik een post gevonden waar de maker van de FastLED library een pre release heeft gedeeld van de volgende update waar deze bug uit gehaald was. 
+
+Ik ben vervolgens de oefeningen knop, druk sensor en distance sensor net als bij de Arduino gaan toepassen op de esp. Dit werkte zoals gehoopt. 
+
+Omdat dit werkte besloot ik met de knop verder te experimenteren door een ademhalings oefening toe te passen die 7 seconde uit ademt en 11 seconde in ademt. Dit is te zien door licht dat midden in de LED matrix start met een blokje van 2x2 en eindigt als de volledige matrix 16x16 oplicht om vervolgens weer terug te gaan naar 2x2.
+
+Toen dit werkte ben ik gaan testen met verschillende kleuren en hoe ik dit in de code moest gaan aangeven.
+
+Ik wilde nog een knop toevoegen die het licht random aan deed en langzaam uit laat gaan. 
+
+De uiteindelijke code vaan deze twee knoppen is dit geworden:
+
+```
+#include <FastLED.h>
+
+#define LED_PIN        20
+#define NUMPIXELS      256  // 16x16 matrix
+#define SPARKLE_PIN    40    // Pin connected to the button for sparkle
+#define SPARKLE_DELAY  200   // Delay between updates (in milliseconds)
+#define FADE_RATE      5      // Amount to change brightness each cycle (lower for slower fade)
+#define MAX_SPARKLES   60     // Maximum number of LEDs to light at the same time
+#define MATRIX_WIDTH   16     // Width of the matrix
+#define MATRIX_HEIGHT  16      // Height of the matrix
+#define BREATHING_PIN  37     // Pin connected to the button for breathing
+#define INHALE_TIME    7000   // Time to inhale (7 seconds)
+#define EXHALE_TIME    11000  // Time to exhale (11 seconds)
+#define BREATHING_DURATION (INHALE_TIME + EXHALE_TIME) // Total breathing duration for one cycle
+
+CRGB leds[NUMPIXELS];
+bool sparkleActive = false;        // State to control the sparkle effect
+bool breathingActive = false;      // Is the breathing animation active?
+bool lastSparkleButtonState = HIGH; // To track button state changes for sparkle
+bool lastBreathingButtonState = HIGH; // To track button state changes for breathing
+unsigned long lastSparkleButtonPress = 0; // For debouncing sparkle button
+unsigned long lastBreathingButtonPress = 0; // For debouncing breathing button
+const unsigned long debounceDelay = 200; // Debounce delay for buttons
+uint8_t brightness[NUMPIXELS] = {0}; // Initialize brightness levels
+bool increasing[NUMPIXELS] = {false}; // Initialize increasing/fading states
+int activeCount = 0;                // Number of currently active LEDs
+unsigned long breathingStartTime = 0;  // When breathing starts
+int cycleCount = 0;                      // Counter for breathing cycles
+const int maxCycles = 2;                 // Maximum number of cycles
+
+// Function prototypes
+void drawBlock(int level);
+int getLedIndex(int row, int col);
+CRGB getGradientColor(int level);
+
+void setup() {
+    Serial.begin(115200);
+    FastLED.addLeds<WS2812B, LED_PIN>(leds, NUMPIXELS);
+    FastLED.setBrightness(255);  // Set maximum brightness
+    fill_solid(leds, NUMPIXELS, CRGB::Black);  // Turn off all LEDs initially
+    FastLED.show();
+
+    pinMode(SPARKLE_PIN, INPUT_PULLUP);
+    pinMode(BREATHING_PIN, INPUT_PULLUP);  // Use internal pull-up for the button
+}
+
+void loop() {
+    // Handle sparkle button
+    bool currentSparkleButtonState = digitalRead(SPARKLE_PIN);
+    // Check for sparkle button press to toggle the sparkle effect
+    if (currentSparkleButtonState == LOW && lastSparkleButtonState == HIGH) {
+        if (millis() - lastSparkleButtonPress > debounceDelay) { // Debounce logic
+            // Allow toggle only if not breathing
+            if (!breathingActive) {
+                sparkleActive = !sparkleActive;  // Toggle sparkle effect state
+                Serial.println(sparkleActive ? "Sparkle effect ON" : "Sparkle effect OFF");
+                lastSparkleButtonPress = millis();  // Update last button press time
+
+                // If turning off sparkle, reset brightness to 0
+                if (!sparkleActive) {
+                    fill_solid(leds, NUMPIXELS, CRGB::Black); // Ensure all LEDs are off
+                    FastLED.show();
+                    activeCount = 0; // Reset active count
+                }
+            }
+        }
+    }
+
+    // Run sparkle effect if active
+    if (sparkleActive) {
+        sprinkle();  // Call the sparkle function
+    }
+
+    // Handle breathing button
+    bool currentBreathingButtonState = digitalRead(BREATHING_PIN);
+    // Check for breathing button press to start the breathing animation only if it's not active
+    if (currentBreathingButtonState == LOW && lastBreathingButtonState == HIGH) {
+        if (millis() - lastBreathingButtonPress > debounceDelay) { // Debounce logic
+            if (!breathingActive) { // Start breathing only if not already active
+                breathingActive = true;  // Set breathing animation active
+                sparkleActive = false; // Turn off sparkle effect when breathing starts
+                fill_solid(leds, NUMPIXELS, CRGB::Black); // Ensure all LEDs are off
+                breathingStartTime = millis();  // Record the time breathing starts
+                cycleCount = 0; // Reset cycle count
+                Serial.println("Breathing started!"); // For debugging
+            }
+            lastBreathingButtonPress = millis(); // Update last button press time
+        }
+    }
+
+    // If breathing animation is active, run it for the specified cycles
+    if (breathingActive) {
+        if (cycleCount < maxCycles) { // Check if we have completed the max cycles
+            if (millis() - breathingStartTime < BREATHING_DURATION) {
+                breathingAnimation();  // Run the breathing animation
+            } else {
+                breathingStartTime = millis(); // Reset start time for the next cycle
+                cycleCount++; // Increment the cycle count
+                Serial.print("Cycle completed: ");
+                Serial.println(cycleCount); // For debugging
+            }
+        } else {
+            breathingActive = false;  // Stop breathing after the maximum cycles
+            fill_solid(leds, NUMPIXELS, CRGB::Black);  // Turn off all LEDs
+            FastLED.show();
+            Serial.println("Breathing animation stopped!"); // For debugging
+        }
+    }
+
+    FastLED.show();  // Update the LED matrix
+
+    lastSparkleButtonState = currentSparkleButtonState;  // Store the sparkle button state
+    lastBreathingButtonState = currentBreathingButtonState; // Store the breathing button state
+}
+
+// Function to create a subtle sparkle effect
+void sprinkle() {
+    // Clear LEDs and prepare for sparkle effect
+    fill_solid(leds, NUMPIXELS, CRGB::Black);
+
+    // Randomly light up a few LEDs while respecting the MAX_SPARKLES limit
+    for (int i = 0; i < NUMPIXELS; i++) {
+        if (brightness[i] > 0) {
+            // Adjust brightness
+            if (increasing[i]) {
+                brightness[i] += FADE_RATE; // Increase brightness
+                if (brightness[i] >= 100) { // Max brightness reached
+                    brightness[i] = 100; // Cap brightness
+                    increasing[i] = false; // Start fading out
+                }
+            } else {
+                brightness[i] -= FADE_RATE; // Decrease brightness
+                if (brightness[i] <= 0) { // Min brightness reached
+                    brightness[i] = 0; // Turn off LED
+                    increasing[i] = true; // Reset to increasing
+                    activeCount--;  // Reduce active count
+                }
+            }
+
+            // Set LED color based on current brightness
+            leds[i] = CRGB(255, 255, 0).fadeToBlackBy(255 - brightness[i]); // Apply brightness with color
+        }
+    }
+
+    // Ensure we don't exceed the maximum number of sparkles
+    if (activeCount < MAX_SPARKLES) {
+        int ledToLight = random(0, NUMPIXELS);
+        // Only light the LED if it's currently off
+        if (brightness[ledToLight] == 0) {
+            brightness[ledToLight] = 1;  // Start at low brightness
+            increasing[ledToLight] = true; // Start increasing brightness
+            activeCount++;  // Count this LED as active
+        }
+    }
+
+    delay(SPARKLE_DELAY);  // Control the speed of the sparkle effect
+}
+
+void breathingAnimation() {
+  unsigned long elapsedTime = millis() - breathingStartTime;
+
+  // Determine current phase of breathing (1 for inhale, 2 for exhale)
+  int currentPhase = (elapsedTime < INHALE_TIME) ? 1 : 2;
+
+  // Calculate the level based on the phase and the elapsed time
+  int level;
+  if (currentPhase == 1) { // Inhale
+    level = elapsedTime / (INHALE_TIME / 8); // 0 to 7 for levels 0 to 7 (2x2 to 16x16)
+  } else { // Exhale
+    level = 7 - ((elapsedTime - INHALE_TIME) / (EXHALE_TIME / 8)); // 7 to 0 for levels 7 to 0 (16x16 to 2x2)
+  }
+
+  level = constrain(level, 0, 8); // Ensure level stays between 0 and 7
+
+  Serial.print("Current Level: "); // Debugging output
+  Serial.println(level + 1); // Display level 1-8
+
+  drawBlock(level);  // Light the matrix based on the current level
+
+  FastLED.show();
+}
+
+// Function to draw a block based on the current level
+void drawBlock(int level) {
+  fill_solid(leds, NUMPIXELS, CRGB::Black);  // Clear the matrix first
+
+  // Loop through each level from outermost to innermost
+  for (int l = level; l >= 0; l--) {
+    int size = (l + 1) * 2;  // Block sizes: 2x2, 4x4, 6x6, ..., 16x16
+    int startRow = (MATRIX_HEIGHT - size) / 2;  // Start row for the block
+    int startCol = (MATRIX_WIDTH - size) / 2;  // Start column for the block
+
+    // Get the gradient color for the current level
+    CRGB blockColor = getGradientColor(l);
+
+    for (int row = startRow; row < startRow + size; row++) {
+      for (int col = startCol; col < startCol + size; col++) {
+        int ledIndex = getLedIndex(row, col);  // Calculate the LED index
+        leds[ledIndex] = blockColor;  // Set the specific LED to the gradient color
+      }
+    }
+  }
+    FastLED.show();
+}
+
+CRGB getGradientColor(int level) {
+  // Array of colors for each level
+  CRGB colors[] = {
+    CRGB::AliceBlue,     // Level 0: 
+    CRGB::SteelBlue ,  // Level 1: 
+    CRGB::RoyalBlue ,  // Level 2: 
+    CRGB::MediumSlateBlue ,   // Level 3: 
+    CRGB::DarkSlateBlue ,    // Level 4: 
+    CRGB::MidnightBlue ,    // Level 5: 
+    CRGB::MediumBlue ,  // Level 6: 
+    CRGB::Navy ,    // Level 7: 
+  };
+
+  // Return the color for the current level (level 0 to 7)
+  return colors[constrain(level, 0, 7)];
+}
+
+// Convert 2D x, y coordinates to the 1D index in the LED array
+int getLedIndex(int row, int col) {
+  return (row * MATRIX_WIDTH) + col;  // Adjust if your matrix wiring is different
+}
+```
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/esp_1_knop_sprinkels.png" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/esp_2_knop_ademhaling.png" alt="Afbeelding 1" width="200"/>    
+    <img src="../images/sensoren/esp_2_knop_ademhaling_1.png" alt="Afbeelding 1" width="200"/>  
+    <img src="../images/sensoren/esp_2_knop_ademhaling_2.png" alt="Afbeelding 1" width="200"/>  
+    <img src="../images/sensoren/esp_2_knop_ademhaling_3.png" alt="Afbeelding 1" width="200"/>  
+    <img src="../images/sensoren/esp_2_knop_ademhaling_4.png" alt="Afbeelding 1" width="200"/>  
+    <img src="../images/sensoren/ademhaling_timed.jpg" alt="Afbeelding 1" width="200"/>  
+</div>
+
+Na deze testen heb ik opnieuw geprobeerd mijn zelf gemaakte Kapton + Copper Matrix te verbinden aan de Led-matrix en deze keer met meer succes. 
+
+De code die ik gebruikt heb hiervoor staat hieronder:
+
+```
+#include <FastLED.h>
+
+// Pin definitions for the LED matrix
+#define LED_PIN 23      // Pin connected to the LED data in
+#define NUMPIXELS 256   // 16x16 matrix = 256 pixels
+#define BRIGHTNESS 50   // Adjust brightness (0-255)
+#define LED_TYPE WS2812 // Specify the LED type
+#define COLOR_ORDER GRB // Specify the color order
+
+// Pressure sensor matrix definitions
+#define numRows 7
+#define numCols 7
+#define sensorPoints (numRows * numCols)
+
+// ESP32-WROOM-32 Analog and Digital pin definitions for pressure sensor
+int rows[] = {36, 39, 34, 35, 32, 33, 25}; // Analog
+int cols[] = {0, 4, 16, 17, 5, 18, 19}; // columns GPIO
+int incomingValues[sensorPoints] = {0};
+
+// Create an array to hold the LED data
+CRGB leds[NUMPIXELS];
+
+void setup() {
+    // Initialize LED matrix
+    FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, NUMPIXELS);
+    FastLED.setBrightness(BRIGHTNESS);
+
+    // Set all rows to INPUT_PULLDOWN to prevent floating values
+    for (int i = 0; i < numRows; i++) {
+        pinMode(rows[i], INPUT);
+    }
+    for (int i = 0; i < numCols; i++) {
+        pinMode(cols[i], INPUT);
+    }
+
+    Serial.begin(115200); // Increased baud rate for better performance
+    delay(1000);
+}
+
+void loop() {
+    // Reset incoming values
+    for (int i = 0; i < sensorPoints; i++) {
+        incomingValues[i] = 0;
+    }
+
+    // Iterate through each column
+    for (int colCount = 0; colCount < numCols; colCount++) {
+        pinMode(cols[colCount], OUTPUT);
+        digitalWrite(cols[colCount], HIGH);
+
+        // Read values from all rows in the current column
+        for (int rowCount = 0; rowCount < numRows; rowCount++) {
+            int rawValue = analogRead(rows[rowCount]);
+            if (rawValue < 20) {
+                incomingValues[colCount * numRows + rowCount] = 0;
+            } else {
+                incomingValues[colCount * numRows + rowCount] = rawValue;
+            }
+        }
+        digitalWrite(cols[colCount], LOW);
+        pinMode(cols[colCount], INPUT);
+    }
+
+    // Control the LED matrix based on pressure values
+    updateLEDs();
+
+    // Print the incoming values of the sensor grid for debugging
+    for (int i = 0; i < sensorPoints; i++) {
+        Serial.print(incomingValues[i]);
+        if (i < sensorPoints - 1) {
+            Serial.print("\t");
+        }
+    }
+    Serial.println();
+    delay(100);  // Adjusted delay for stability
+}
+
+void updateLEDs() {
+    FastLED.clear(); // Clear the matrix
+
+    // Mapping from 7x7 sensor grid to 16x16 LED matrix
+    for (int rowCount = 0; rowCount < numRows; rowCount++) {
+        for (int colCount = 0; colCount < numCols; colCount++) {
+            // Calculate the corresponding ledIndex for a 16x16 matrix
+            // Each sensor controls 2x2 area on the LED matrix to fill it up
+            int ledRow = rowCount * 2; // Each sensor maps to two rows
+            int ledCol = colCount * 2; // Each sensor maps to two columns
+
+            // For zig-zag pattern: alternate direction based on ledRow
+            for (int i = 0; i < 2; i++) { // Loop for two rows
+                for (int j = 0; j < 2; j++) { // Loop for two columns
+                    int ledIndex;
+                    if ((ledRow + i) % 2 == 0) {
+                        // Even rows go left to right
+                        ledIndex = (ledRow + i) * 16 + (ledCol + j);
+                    } else {
+                        // Odd rows go right to left
+                        ledIndex = (ledRow + i) * 16 + (15 - (ledCol + j));
+                    }
+
+                    // Get the value from the incoming sensor readings
+                    int value = incomingValues[colCount * numRows + rowCount];
+
+                    // Only light up the corresponding LEDs if pressure is significant enough
+                    if (value > 20) { // Check if pressure is significant enough
+                        if (ledIndex >= 0 && ledIndex < NUMPIXELS) {
+                            leds[ledIndex] = CRGB::Red; // Light up the corresponding LED
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    FastLED.show(); // Update the LED matrix
+}
+```
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/esp_druksensor.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/esp_druksensor_1.jpg" alt="Afbeelding 1" width="200"/>    
+</div>
 
 
 # Touch Foil Screen
