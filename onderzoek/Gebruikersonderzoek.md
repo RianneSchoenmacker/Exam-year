@@ -250,7 +250,6 @@ Stress kan ervoor zorgen dat je fysiek en emotioneel uitgeput raakt waardoor je 
 
 Het kan zijn dat je door stress veel negatieve gedachten krijgt, ook over anderen. Ook zorgt stress voor een korter lontje waardoor er conflicten kunnen ontstaan met mensen op jouw werk of thuis. Dit alles maakt het verwerken van jouw stress niet makkelijker.
 
-
 ...
 
 ### Gevolgen stress

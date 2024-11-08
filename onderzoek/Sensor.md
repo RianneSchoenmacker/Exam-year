@@ -1126,6 +1126,17 @@ void updateLEDs() {
     <img src="../images/sensoren/esp_druksensor_1.jpg" alt="Afbeelding 1" width="200"/>    
 </div>
 
+Nadat dit gelukt is heb ik de sensor opgeschaald en dit werkt beter dan de kleine versie. Wel kwam ik er achter dat de velostat de stroom te goed door laat maar conductive foam werkt veel beter. 
+
+Dit zijn afbeeldingen van de opgeschaalde versie ook zie je het verschil met foam en de velostat.
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/druksensor_maken_vergroot_foam.jpg" alt="Afbeelding 1" width="200"/>
+    <img src="../images/sensoren/druksensor_maken_vergroot_foam1.jpg" alt="Afbeelding 1" width="200"/> 
+    <img src="../images/sensoren/druksensor_maken_vergroot_foam2.jpg" alt="Afbeelding 1" width="200"/>  
+    <img src="../images/sensoren/druksensor_maken_vergroot_velostat.jpg" alt="Afbeelding 1" width="200"/>
+</div>
+
 
 # Touch Foil Screen
 

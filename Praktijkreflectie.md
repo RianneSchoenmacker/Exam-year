@@ -59,9 +59,20 @@ Problemen vorige project
 Je zet een richting uit waarin jij je verder wilt ontwikkelen met je afstuderen. Door de richting in semester 7 scherp te krijgen kun je in semester 8 direct aan de slag. Door bewust te zijn van je interesses en positionering, kun je bepalen welke stappen jij kan zetten om daar te komen. Bij de reflectie heb je al benoemd hoe je jezelf ziet. Nu kijk je verder dan het heden.
 
 ### Wat zijn mijn doelen?
-Ik wil trots zijn op een eindprojduct die ik neer ga zetten voor mijn examen. 
+Ik wil trots zijn op een eind product die ik neer ga zetten voor mijn examen. 
 
 ### Welke rol wil ik innemen de wereld en het werkveld?
 
 
 ### Wat wil ik later/over tien jaar/morgen/komende week/tijdens het eindexamen doen?  
+
+
+
+# Feedback Voortgangspresentatie
+
+Je laat een hele nette opzet zien van een eigen project, een duidelijke presentatie geeft goed inzicht in het traject en je leerproces van deze periode. We zien aandacht voor eigen beeld, eigen techniek, eigen profilering en een eigen onderzoek, heel goed. Zoals besproken kan ‘de gebruiker’ of ‘een doelgroep’ in het vervolg beter in beeld komen, iets voor tweede deel van de periode.
+
+Examinator(en):
+Tessel, Robbert
+
+
