@@ -1131,11 +1131,40 @@ Nadat dit gelukt is heb ik de sensor opgeschaald en dit werkt beter dan de klein
 Dit zijn afbeeldingen van de opgeschaalde versie ook zie je het verschil met foam en de velostat.
 
 <div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/druksensormaken_groot.jpg" alt="Afbeelding 1" width="200"/>
     <img src="../images/sensoren/druksensor_maken_vergroot_foam.jpg" alt="Afbeelding 1" width="200"/>
     <img src="../images/sensoren/druksensor_maken_vergroot_foam1.jpg" alt="Afbeelding 1" width="200"/> 
+</div>
+
+<div style="display: flex; justify-content: space-between;"> 
     <img src="../images/sensoren/druksensor_maken_vergroot_foam2.jpg" alt="Afbeelding 1" width="200"/>  
     <img src="../images/sensoren/druksensor_maken_vergroot_velostat.jpg" alt="Afbeelding 1" width="200"/>
 </div>
+
+Ik heb meer Foam proberen te bestellen maar dat werkt helaas niet dus ik heb opnieuw ander soort schuim besteld.
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/Schuim_werkt_niet.jpg" alt="Afbeelding 1" width="200"/> 
+    <img src="../images/sensoren/druksensor_schuim_werkt_niet.jpg" alt="Afbeelding 1" width="200"/>   
+</div>
+
+Voor het bestellen van het foam heb ik ook nog een mail gestuurd naar [Teknis](https://www.teknis.co.uk/topic/contactussuccessful) Helaas heb ik hier geen antwoordt op gehad.
+
+```
+Hello Tecnis Team,
+
+I am a student from the Netherlands currently working on a project involving interactive electronics. I am interested in your conductive foam made from polyurethane, particularly for its electrostatic discharge properties and customizable form factor. I’m exploring its potential use in applications where it could function as a pressure-sensitive element, responding to varying pressure with changes in resistance.
+
+Could you please let me know if this foam is suitable for such applications, and whether it can conduct small currents or transmit variable resistance data? Additionally, would it be possible to obtain a sample of the conductive foam with dimensions around 15x15 cm to test for my project?
+
+Thank you for your assistance!
+
+Best regards,
+Rianne
+info@rianneschoenmacker.com
+Student, New Design and Attitude, St.Joost, Avans
+
+```
 
 
 # Touch Foil Screen
