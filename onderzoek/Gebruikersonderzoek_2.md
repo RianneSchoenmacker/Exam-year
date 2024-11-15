@@ -1,9 +1,10 @@
 Na mijn Voortgangspresentatie kwam naar voor dat mijn 'gebruiker’ of 'doelgroep’ van mijn project beter in beeld kon komen.
 
+Een alumnu die met tuften bezig is: https://www.steffievandenelshout.nl/
+
 Ik heb onderzoek gedaan naar methodes hoe ik dit beter in beeld kon krijgen 
 
 - [Interview](https://www.designkit.org/methods/interview.html)
-- [Power Mapping](https://www.designkit.org/methods/power-mapping.html)
 - [Card Sort](https://www.designkit.org/methods/card-sort.html)
 
 deze methodes heb ik van de website [Designkit](https://www.designkit.org/methods.html)
@@ -16,7 +17,7 @@ Mijn hoofdvraag was ook nog te onduidelijk en te groot maar kan duidelijker en s
 
 Hoe kan ik mensen in een stressvolle of moeilijke situatie op een bewuste manier de mogelijkheid geven om rust te vinden?
 
-# Mijn doel van het project
+# Mijn doel van het project Semester 8
 
 Doel van het product - Spanning loslaten/afleiden van stressvolle situaties.
 Gebruikersgedrag - Eenvoudige, beweging/oefeningen uitvoeren.
@@ -36,12 +37,17 @@ Ik ben er eigenlijk pas achter gekomen dat de menselijker ervaring aan focus pun
 
 voorbeelden van projecten zijn
 - Adem in. Adem uit.
-- 
+- Opgesloten in zo'n grote ruimte
+- Bedraden Draden
+- Bedraden Draden 2.0
+
 
 **Mijn Intrinsieke Motivatie** 
 
 Rianne Schoenmacker, die ADHD en autisme heeft, heeft veel geleerd over zichzelf en hoe anderen haar ervaren. Ze begrijpt dat stress op verschillende manieren wordt ervaren en dat ze zelf snel overprikkeld raakt, vooral door overdenking. Ondanks haar moeite met plannen, beseft ze dat structuur essentieel is voor haar welzijn. Dit inzicht motiveert haar om anderen te helpen rust en reflectie te vinden, vooral in stressvolle momenten. Via haar ontwerpen wil ze mensen ondersteunen bij het omgaan met stress, zodat ze meer rust en bewustzijn in hun leven kunnen brengen.
 
+
+Mijn project gaat over de ervaring en de techniek die daar op gefocust is.
 
 
 
