@@ -1269,7 +1269,389 @@ Het grootste nadeel van dit is het wachten en de spanning dat je niet helemaal w
 Dit is gelukkig goed gekomen met het touch screen hij is heel aangekomen. Hierna kwam ik er alleen achter dat ik nog een breakout nodig had om hem te laten werken en hier moest ik dus weer op wachten.
 
 
-Het touch panel werkt met 
+Het touch panel werkt tot mijn verbazing heel goed.
+
+Ik gebruik een (breakout board)[https://www.bol.com/nl/nl/p/touch-screen-breakout-board-for-4-pin-1-0mm-fpc-adafruit-3575/9300000138552220/?Referrer=ADVNLGOO002027-S--9300000138552220&gad_source=1&gclid=CjwKCAiA6aW6BhBqEiwA6KzDcxyvckjwCBUpMgjMghskX02dTKM00pWccik9i---WRh4w1UVT8Y6zRoCRm8QAvD_BwE] van adafruit. deze kun je eenvoudig aansluiten op een microcontroller. Het breakout board breekt de 4 signalen (X+, X-, Y+, Y-) uit naar 4 standaard through-hole headers (soldeerpads), zodat je deze eenvoudig met jumper wires kunt aansluiten op een microcontroller of een ADC (Analog-to-Digital Converter). Hiermee kun je de analoge signalen van het touchscreen uitlezen en verwerken.
+Ook kun je compatibiliteit met analoge inputs hiermee krijgen. Een resistief touchscreen werkt door de druk van een stylus of vinger, die een verbinding maakt tussen de X- en Y-lagen. Door spanningsverschillen over deze lagen te meten, kun je de X- en Y-coördinaten bepalen. Het breakout board maakt het mogelijk om de signalen aan te sluiten op bijvoorbeeld een Arduino of ESP32, die de analoge waarden uitleest en de positie berekent.
+
+De touch panel werkt dus soort gelijk als mijn kapton + Copper Matrix alleen preciecer. ook is hij gemaakt van glas en dus doorzichtig, hierdoor kan ik deze direct achter het kleedplaatsen en de LED matrix daar achter. je drukt via het kleed dan direct op de sentor inplaats van dat dit ook door de led matrix moet. Het nadeel is wel omdat het een panel is en gemaakt van glas is hij niet flexibel. Ik ben nog aan het zoeken naar een flexibele en betaalbare variant.
+
+Het scherm waarmee ik nu heb kunnen testen is 7 inch.
+
+Op mijn arduino werkt hij gelijk heel soepel. Op mijn esp is dit een ander verhaal omdat de library daar niet goed op aan sluit waardoor ik hem zelf moet gaan mappen maar het is wel mogelijk. Ik heb voo rnu besloten met mijn arduino te gaan werken waardoor ik die code daarna alleen maar over hoef te zetten.
+
+de code voor de arduino het scherm en de toevoeging van 2 knoppen is als volgt. Op een knop staat de breathing exercise en op die ander verander je de kleur waarmee je kan tekenen.
+
+```
+#include <Adafruit_NeoMatrix.h>
+#include <Adafruit_NeoPixel.h>
+#include "TouchScreen.h"
+
+// Touch Screen Pins
+#define YP A2
+#define XM A3
+#define YM 8
+#define XP 9
+TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
+
+// LED Matrix Pins
+#define LED_PIN 6       // Data pin for LED matrix
+#define MATRIX_WIDTH 16
+#define MATRIX_HEIGHT 16
+Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(MATRIX_WIDTH, MATRIX_HEIGHT, LED_PIN, 
+                                               NEO_MATRIX_TOP + NEO_MATRIX_LEFT + 
+                                               NEO_MATRIX_ROWS + NEO_MATRIX_ZIGZAG, 
+                                               NEO_GRB + NEO_KHZ800);
+
+// Button Pins
+#define BUTTON_PIN 2    // Pin for button to start breathing exercise
+#define COLOR_BUTTON_PIN 3 // Pin for button to change color
+
+// Breathing exercise parameters
+#define INHALE_TIME 7000  // Time to inhale (7 seconds)
+#define EXHALE_TIME 11000  // Time to exhale (11 seconds)
+#define BREATHING_DURATION (INHALE_TIME + EXHALE_TIME) // Total breathing duration for one cycle
+
+unsigned long breathingStartTime = 0;  // When breathing starts
+bool breathingActive = false;          // Is the breathing animation active?
+bool lastButtonState = HIGH;           // To track button state changes
+int cycleCount = 0;                    // Counter for breathing cycles
+const int maxCycles = 0;               // Maximum number of cycles
+
+// Variables for color change
+bool lastColorButtonState = HIGH;
+int currentColor = 0;  // 0 = Blue, 1 = Red, 2 = Green
+
+void setup() {
+  Serial.begin(9600);
+  matrix.begin();
+  matrix.setBrightness(50); // Set brightness of the matrix (optional)
+
+  pinMode(BUTTON_PIN, INPUT_PULLUP); // Set button pin as input with internal pull-up resistor
+  pinMode(COLOR_BUTTON_PIN, INPUT_PULLUP); // Set color change button pin as input with internal pull-up resistor
+  matrix.clear(); // Initialize the matrix to all off
+  matrix.show();
+}
+
+void loop() {
+  bool currentButtonState = digitalRead(BUTTON_PIN);
+
+  // Check for button press to start the breathing animation only if it's not active
+  if (currentButtonState == LOW && lastButtonState == HIGH && !breathingActive) {
+    breathingStartTime = millis();  // Record the time breathing starts
+    breathingActive = true;          // Activate the breathing animation
+    cycleCount = 0;                  // Reset cycle count
+    Serial.println("Breathing started!"); // For debugging
+  }
+
+  // Check the color change button
+  bool currentColorButtonState = digitalRead(COLOR_BUTTON_PIN);
+  if (currentColorButtonState == LOW && lastColorButtonState == HIGH) {
+    // Cycle through colors (Blue -> Red -> Green) only if breathing is not active
+    if (!breathingActive) {
+      currentColor = (currentColor + 1) % 3;
+      Serial.print("Color changed to: ");
+      if (currentColor == 0) {
+        Serial.println("Blue");
+      } else if (currentColor == 1) {
+        Serial.println("Red");
+      } else {
+        Serial.println("Green");
+      }
+    }
+  }
+
+  // If breathing animation is active, run it for the specified cycles
+  if (breathingActive) {
+    if (cycleCount < maxCycles) { // Check if we have completed the max cycles
+      if (millis() - breathingStartTime < BREATHING_DURATION) {
+        breathingAnimation();  // Run the breathing animation
+      } else {
+        breathingStartTime = millis(); // Reset start time for the next cycle
+        cycleCount++; // Increment the cycle count
+        Serial.print("Cycle completed: ");
+        Serial.println(cycleCount); // For debugging
+      }
+    } else {
+      breathingActive = false;  // Stop breathing after the maximum cycles
+      matrix.clear();  // Turn off all LEDs
+      matrix.show();
+      Serial.println("Breathing stopped!"); // For debugging
+    }
+  }
+
+  // Only handle touch input when breathing is not active
+  if (!breathingActive) {
+    // Check if the screen is touched and handle LED touch
+    TSPoint p = ts.getPoint();
+    if (p.z > ts.pressureThreshhold) {
+      // Map touch coordinates to matrix coordinates (0-15 for both axes)
+      int ledX = map(p.x, 95, 910, 0, 15); // Adjust raw X range as needed
+      int ledY = map(p.y, 220, 875, 0, 15); // Adjust raw Y range as needed
+
+//      Serial.print("P.y = ");
+  //    Serial.println(p.y);
+
+      // Invert only the Y-axis for the LED matrix orientation (fix vertical flip)
+      ledY = 15 - ledY;  // Flip the Y-axis (invert it)
+
+      // Set the LED color based on the current color mode
+      uint32_t color = matrix.Color(0, 0, 0);  // Default off color
+      if (currentColor == 0) {
+        color = matrix.Color(0, 0, 255); // Blue
+      } else if (currentColor == 1) {
+        color = matrix.Color(255, 0, 0); // Red
+      } else if (currentColor == 2) {
+        color = matrix.Color(0, 255, 0); // Green
+      }
+
+      // Turn on the touched LED with the selected color
+      matrix.drawPixel(ledX, ledY, color);
+      matrix.show();
+    } else {
+      // Clear LEDs if no touch is detected for a while
+      matrix.clear();
+      matrix.show();
+    }
+  }
+
+  lastButtonState = currentButtonState;  // Store the button state
+  lastColorButtonState = currentColorButtonState; // Store color change button state
+}
+
+void breathingAnimation() {
+  unsigned long elapsedTime = millis() - breathingStartTime;
+
+  // Determine current phase of breathing (1 for inhale, 2 for exhale)
+  int currentPhase = (elapsedTime < INHALE_TIME) ? 1 : 2;
+
+  // Calculate the level based on the phase and the elapsed time
+  int level;
+  if (currentPhase == 1) { // Inhale
+    level = elapsedTime / (INHALE_TIME / 8); // 0 to 7 for levels 0 to 7 (2x2 to 16x16)
+  } else { // Exhale
+    level = 7 - ((elapsedTime - INHALE_TIME) / (EXHALE_TIME / 8)); // 7 to 0 for levels 7 to 0 (16x16 to 2x2)
+  }
+
+  level = constrain(level, 0, 7); // Ensure level stays between 0 and 7
+
+  Serial.print("Current Level: "); // Debugging output
+  Serial.println(level + 1); // Display level 1-8
+
+  drawBlock(level + 1);  // Light the matrix based on the current level
+
+  matrix.show();
+}
+
+// Function to draw a block based on the current level
+void drawBlock(int level) {
+  matrix.clear();  // Clear the matrix first
+
+  int size = level * 2;  // Block sizes: 2x2, 4x4, 6x6, ..., 16x16
+  int startRow = (MATRIX_HEIGHT - size) / 2;  // Start row for the block
+  int startCol = (MATRIX_WIDTH - size) / 2;  // Start column for the block
+
+  for (int row = startRow; row < startRow + size; row++) {
+    for (int col = startCol; col < startCol + size; col++) {
+      matrix.drawPixel(col, row, matrix.Color(0, 0, 255));  // Blue color
+    }
+  }
+}
+```
+
+Ook ben ik aan de slag gegaan met een (rotery encoder)[https://nl.aliexpress.com/item/1005005988110355.html?src=google&pdp_npi=4%40dis%21EUR%212.14%211.37%21%21%21%21%21%40%2112000035628782774%21ppc%21%21%21&src=google&albch=shopping&acnt=272-267-0231&isdl=y&slnk=&plac=&mtctp=&albbt=Google_7_shopping&aff_platform=google&aff_short_key=UneMJZVf&gclsrc=aw.ds&&albagn=888888&&ds_e_adid=&ds_e_matchtype=&ds_e_device=c&ds_e_network=x&ds_e_product_group_id=&ds_e_product_id=nl1005005988110355&ds_e_product_merchant_id=106630103&ds_e_product_country=NL&ds_e_product_language=nl&ds_e_product_channel=online&ds_e_product_store_id=&ds_url_v=2&albcp=20730513328&albag=&isSmbAutoCall=false&needSmbHouyi=false&gad_source=1&gclid=CjwKCAiA6aW6BhBqEiwA6KzDcwOzYjxIglzflu-x5K9OdWPMxdHlOm7LU1ZaiaR-uTAzwc-H2qHVVRoChTUQAvD_BwE] 
+
+Dit is een klick knop en een draai knop in een. In de volgende code zie je hoe ik de gecodeerd heb dat je door de knop te draaien de kleur kan wijzigen en door er op t eklikken selecteer je die kleur vervolgens kun je er mee tekenen op de touch panel. Om deze code te maken heb ik eerst de rotery encoder uitgelezen om te zien of en hoe hij waarde gaf. Vervolgens heb ik deze aan alleen de LED matrix toegevoegd en daarna de touch panel toegevoegd.
+
+```
+#include <Adafruit_NeoPixel.h>
+#include "TouchScreen.h"
+
+// Rotary encoder pins
+const int clkPin = 6; // CLK (Clock)
+const int dtPin = 5;  // DT (Data)
+const int swPin = 4;  // SW (Button)
+
+// LED Matrix setup
+#define LED_PIN 13          // Pin for the NeoPixel matrix
+#define NUM_LEDS 256        // 16x16 matrix
+Adafruit_NeoPixel strip(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
+
+// Touch screen pins
+#define YP A2
+#define XM A3
+#define YM 8
+#define XP 9
+TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
+
+// Variables for rotary encoder
+int clkLastState;
+bool buttonPressed = false;
+int colorIndex = 0; // Index for the selected preset color
+
+// Debounce timing for rotary encoder
+unsigned long lastDebounceTime = 0;
+const unsigned long debounceDelay = 5; // 5 ms debounce delay
+
+// Timeout for rotary encoder inactivity
+unsigned long lastRotaryTime = 0;
+const unsigned long rotaryTimeout = 1000; // 1 second timeout
+
+// Preset colors (RGB format)
+const int presetColors[][3] = {
+    {235, 64, 52},   // Red
+    {64, 235, 52},   // Green
+    {52, 64, 235},   // Blue
+    {235, 235, 52},  // Yellow
+    {235, 52, 235},  // Magenta
+    {52, 235, 235},  // Cyan
+    {255, 255, 255}  // White
+};
+const int numColors = sizeof(presetColors) / sizeof(presetColors[0]);
+
+int lastLedIndex = -1; // Store the last LED index
+unsigned long lastTouchTime = 0; // Track time of the last touch
+const unsigned long timeout = 500; // Timeout to clear LEDs (ms)
+
+void setup() {
+  // Setup pins for rotary encoder and touch screen
+  pinMode(clkPin, INPUT);
+  pinMode(dtPin, INPUT);
+  pinMode(swPin, INPUT_PULLUP); // Use internal pull-up for the button
+
+  // Initialize LED matrix
+  strip.begin();
+  strip.show(); // Clear all LEDs
+
+  // Initialize rotary encoder
+  clkLastState = digitalRead(clkPin);
+
+  // Start serial communication for debugging
+  Serial.begin(9600);
+}
+
+void loop() {
+  handleRotaryEncoder();
+  updateLEDs();
+  handleTouchScreen();
+}
+
+// Function to handle rotary encoder input
+void handleRotaryEncoder() {
+  int clkState = digitalRead(clkPin);
+  int dtState = digitalRead(dtPin);
+
+  // Check for rotation with debounce
+  if ((millis() - lastDebounceTime) > debounceDelay) {
+    if (clkState != clkLastState) {
+      if (dtState != clkState) {
+        // Rotate clockwise: increment color index
+        colorIndex = (colorIndex + 1) % numColors;
+      } else {
+        // Rotate counterclockwise: decrement color index
+        colorIndex = (colorIndex - 1 + numColors) % numColors;
+      }
+
+      // Debugging output
+      Serial.print("Current Color Index: ");
+      Serial.println(colorIndex);
+      Serial.print("Previewing Color: R=");
+      Serial.print(presetColors[colorIndex][0]);
+      Serial.print(", G=");
+      Serial.print(presetColors[colorIndex][1]);
+      Serial.print(", B=");
+      Serial.println(presetColors[colorIndex][2]);
+
+      // Update debounce timing
+      lastDebounceTime = millis();
+
+      // Reset rotary inactivity timer
+      lastRotaryTime = millis();
+    }
+  }
+  clkLastState = clkState;
+
+  // Check for button press with debounce
+  if (digitalRead(swPin) == LOW && !buttonPressed) {
+    buttonPressed = true;
+    // Color selected
+    Serial.print("Color Selected: R=");
+    Serial.print(presetColors[colorIndex][0]);
+    Serial.print(", G=");
+    Serial.print(presetColors[colorIndex][1]);
+    Serial.print(", B=");
+    Serial.println(presetColors[colorIndex][2]);
+  } else if (digitalRead(swPin) == HIGH) {
+    buttonPressed = false;
+  }
+}
+
+// Function to handle touch screen input
+void handleTouchScreen() {
+  TSPoint p = ts.getPoint();
+  
+  // Check if the screen is touched
+  if (p.z > ts.pressureThreshhold) {
+    lastTouchTime = millis(); // Update last touch time
+
+    // Map touch coordinates to LED matrix coordinates
+    int ledX = map(p.x, 100, 900, 0, 15); // Adjust raw X range as needed
+    int ledY = map(p.y, 100, 900, 0, 15); // Adjust raw Y range as needed
+
+    // Invert only the Y-axis for the LED matrix orientation (fix vertical flip)
+    ledY = 15 - ledY;  // Flip the Y-axis (invert it)
+
+    // Zigzag pattern logic
+    int ledIndex;
+    if (ledY % 2 == 0) {
+      // Even row (left to right)
+      ledIndex = ledY * 16 + ledX;
+    } else {
+      // Odd row (right to left)
+      ledIndex = (ledY + 1) * 16 - ledX - 1;
+    }
+
+    // Turn on the touched LED with the selected color
+    strip.setPixelColor(ledIndex, strip.Color(
+      presetColors[colorIndex][0],
+      presetColors[colorIndex][1],
+      presetColors[colorIndex][2]
+    ));
+    strip.show();
+  } else if (millis() - lastTouchTime > timeout) {
+    // Clear LEDs if no touch is detected for a while
+    strip.clear();
+    strip.show();
+  }
+}
+
+// Function to update the LED matrix with the current color (optional)
+void updateLEDs() {
+  // If rotary encoder hasn't been used for more than 1 second, turn off LEDs
+  if (millis() - lastRotaryTime > rotaryTimeout) {
+    strip.clear(); // Turn off all LEDs
+    strip.show();
+    return;
+  }
+
+  // Optionally update LEDs with the current color preview (before drawing with touch)
+  for (int i = 0; i < NUM_LEDS; i++) {
+    strip.setPixelColor(i, strip.Color(
+      presetColors[colorIndex][0],
+      presetColors[colorIndex][1],
+      presetColors[colorIndex][2]
+    ));
+  }
+  strip.show();
+}
+```
+
+Ik ben hier nog veel aan het testen. 
+
+
+
+
+
 
 
 

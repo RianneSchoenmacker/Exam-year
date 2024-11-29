@@ -51,5 +51,15 @@ Mijn project gaat over de ervaring en de techniek die daar op gefocust is.
 
 
 
+# Survey
+Om er achter te komen wat mensen eigenlijk stressvol vinden heb ik een vragenlijst gedeeld.
+
+Ik ben nog aan het wachten voor genoeg antwoorden. - 29-11-24
+
+Ik heb de vragenlijst gedeeld op verschillende manieren.
+- Whatsapp
+- Linked in
+- Reddit (verschillende Reddit post voor gemaakt)
+
 
 
