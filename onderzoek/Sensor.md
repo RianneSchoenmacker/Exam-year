@@ -65,7 +65,6 @@
 - **Gebruik**: Gebruikers kunnen met hun vingers op het scherm drukken om functies in te schakelen of instellingen aan te passen. Dit biedt een gebruiksvriendelijke interface voor het bedienen van verlichting en andere interactieve elementen in het werkstuk, zoals het kiezen van kleuren of het instellen van de helderheid.
 
 
-
 ## Kapton + Copper Matrix
 
 Ik wil beginnen met het maken van de:
@@ -1166,6 +1165,15 @@ Student, New Design and Attitude, St.Joost, Avans
 
 ```
 
+Op de mail heb ik geen reactie gehad dus ik heb in de tussentijd meer schuim geprobeerd te bestellen.
+
+Ik heb ook nog foam geprobeerd dat als filter in de afzuigkap zit omdat hierin koolstof zit wat ook geleidend is, helaas werkte dat niet. Wel heb ik hierna de juiste foam gevonden. Deze werkte goed bij mijn vergrote sensor. 
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="../images/sensoren/druksensor_maken_vergroot_foamgroot.jpg" alt="Afbeelding 1" width="200"/> 
+</div>
+
+Deze manier werkt heel prettig, maar het heeft ook min punten. De voordelen zijn dat het een flexibelle sensor is en het is groot opteschalen. Nadelen zijn dan hij niet heel precies werkt en er af en toe toch verkeerde waardes zijn. Ook is hij niet doorzichtig hierdoor moet de led matrix achter het kleed en op de matrix.
 
 # Touch Foil Screen
 
@@ -1255,5 +1263,13 @@ With kind regards,
 Rianne Schoenmacker
 ```
 
-Helaas heb ik geen antwoord gehad van de bovenstaande bedrijven.
+Helaas heb ik geen antwoord gehad van de bovenstaande bedrijven dus ben ik via aliexpress gewoon maar gaan bestellen. 
+Het grootste nadeel van dit is het wachten en de spanning dat je niet helemaal weet wat je binenkrijgt.
+
+Dit is gelukkig goed gekomen met het touch screen hij is heel aangekomen. Hierna kwam ik er alleen achter dat ik nog een breakout nodig had om hem te laten werken en hier moest ik dus weer op wachten.
+
+
+Het touch panel werkt met 
+
+
 
