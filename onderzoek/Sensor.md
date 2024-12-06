@@ -1646,7 +1646,25 @@ void updateLEDs() {
 }
 ```
 
-Ik ben hier nog veel aan het testen. 
+# External DAC
+
+Ik ben begonnen met testen voor audio met een DAC.
+
+Ik heb deze website gebruikt als voorbeeld, (Git info)[https://github.com/pschatzmann/arduino-audio-tools/blob/main/examples/examples-stream/streams-generator-i2s/README.md]. Ik heb het een soort van laten werken. Het doel ik om een toon te kunnen aansturen. 
+
+Het gebruik van specifieke audiotonen en frequenties kan helpen bij het verminderen van stress en het creëren van een gevoel van rust. Verschillende onderzoeken en therapeutische benaderingen hebben enkele frequenties geïdentificeerd die bijzonder nuttig kunnen zijn:
+
+432 Hz: Deze frequentie wordt vaak beschouwd als een natuurlijke toonhoogte die helpt bij ontspanning en het verminderen van stress. Het wordt in verband gebracht met een gevoel van harmonie en rust, omdat het beter resoneert met de natuurlijke vibraties van het lichaam​
+
+528 Hz ("Love Frequency"): Dit wordt vaak gebruikt in genezings- en ontspanningstechnieken. Onderzoek suggereert dat het zelfs DNA-reparatie kan ondersteunen en helpt bij het bevorderen van een gevoel van welzijn​
+
+40 Hz: Deze toon wordt geassocieerd met een verbeterde concentratie en het balanceren van hersengolfactiviteit. Het kan helpen om een gevoel van helderheid te creëren terwijl het ontspannend werkt​
+
+Delta-golven (1-4 Hz): Deze lage frequenties worden vaak gebruikt in diepe meditatie en slaaptherapie, wat kan helpen bij het verminderen van stress en het resetten van de geest​
+
+De effecten van deze frequenties kunnen variëren afhankelijk van de persoon, de context waarin ze worden beluisterd en de duur van blootstelling. Voor sommige mensen werkt een combinatie van verschillende frequenties het beste, zoals in binaurale beats of soundscapes.
+
+
 
 
 

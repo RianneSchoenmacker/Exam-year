@@ -32,3 +32,5 @@ Daarna ben ik gaan oefenen met de wol die ik al had liggen en om te testen of he
 </div>
 
 Ik merk dat ik het tuften los van de technologie ook moet blijven oefenen omdat het tuften en scheren daarvan ook een kunst is op zich.
+
+Ik heb in de Zeeman een wol gevonden die reflecterend is.

@@ -159,6 +159,19 @@ Two Way Mirrors. (2021, 21 maart). PCAP Touch Foil [Projected Capacitive Touch F
 
 Voor Tp900 Comfort 6ag1 124-0jc01-4ax0 6ag1124-0jc01-4ax0 Aanraakscherm Met Overlay Beschermende Film - AliExpress 7. (z.d.). Aliexpress. https://nl.aliexpress.com/item/1005005558373872.html?spm=a2g0o.detail.pcDetailTopMoreOtherSeller.1.2dd5hvWMhvWM57&gps-id=pcDetailTopMoreOtherSeller&scm=1007.40050.354490.0&scm_id=1007.40050.354490.0&scm-url=1007.40050.354490.0&pvid=6f436105-f86e-4186-825a-3bb08a0c6258&_t=gps-id:pcDetailTopMoreOtherSeller,scm-url:1007.40050.354490.0,pvid:6f436105-f86e-4186-825a-3bb08a0c6258,tpp_buckets:668%232846%238114%231999&isseo=y&pdp_npi=4%40dis%21EUR%2119.24%2115.39%21%21%2121.02%2116.81%21%402103919917272725633433648ead39%2112000033537286149%21rec%21NL%216107286665%21X&utparam-url=scene%3ApcDetailTopMoreOtherSeller%7Cquery_from%3A
 
+A Comprehensive to ESP32 Pinout Diagram | Xecor. (z.d.). https://www.xecor.com/blog/esp32-pinout-diagram
+
+# Geluid
+Aura Health Team. (2023, 4 december). Best Frequency for Meditation: Optimal Frequencies Explored. Aura. https://www.aurahealth.io/blog/best-frequency-for-meditation
+
+Ocean, L. (2024, 4 januari). Definitions: The 7 healing frequencies explained. Mind Is The Master. https://www.mindisthemaster.com/the-7-healing-frequencies/
+
+VISUAL ACOUSTIC EXPERIENCE. (z.d.). https://visual-acoustic.com/
+
+Calamassi, D., Vigni, M. L. L., Fumagalli, C., Gheri, F., Pomponi, G. P., & Bambi, S. (2022). The Listening to music tuned to 440 Hz versus 432 Hz to reduce anxiety and stress in emergency nurses during the COVID-19 pandemic: a double-blind, randomized controlled pilot study. PubMed, 93(S2), e2022149. https://doi.org/10.23750/abm.v93is2.12915
+
+Pschatzmann. (z.d.). arduino-audio-tools/examples/examples-stream/streams-generator-i2s/README.md at main · pschatzmann/arduino-audio-tools. GitHub. https://github.com/pschatzmann/arduino-audio-tools/blob/main/examples/examples-stream/streams-generator-i2s/README.md
+
 # Gebruikersonderzoek
 
 Alles over hoge werkdruk en werkstress : NN. (z.d.). https://www.nn.nl/Zakelijk/Werkgever/Verzuimoorzaak-werkdruk-en-werkstress.htm#:~:text=Hoeveel%20mensen%20in%20Nederland%20ervaren,als%20reden%20voor%20het%20verzuim.
