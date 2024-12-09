@@ -1664,6 +1664,134 @@ Delta-golven (1-4 Hz): Deze lage frequenties worden vaak gebruikt in diepe medit
 
 De effecten van deze frequenties kunnen variëren afhankelijk van de persoon, de context waarin ze worden beluisterd en de duur van blootstelling. Voor sommige mensen werkt een combinatie van verschillende frequenties het beste, zoals in binaurale beats of soundscapes.
 
+Het is mij gelukt om de DAC aan te sluiten op de esp en speacker en ook om er een rotery encoder op aan tesluiten om de audio te stoppen, afspelen en toon te veranderen.
+
+```
+#include "AudioTools.h"
+
+// Rotary encoder pins
+const int clkPin = 18; // CLK (Clock)
+const int dtPin = 19;  // DT (Data)
+const int swPin = 21;  // SW (Button)
+
+// Audio setup
+AudioInfo info(24100, 2, 16); // Audio configuration
+SineWaveGenerator<int16_t> sineWave(100); // Start with 100 Hz
+GeneratedSoundStream<int16_t> sound(sineWave);
+I2SStream out;
+StreamCopy copier(out, sound);
+
+// Variables for rotary encoder
+int clkLastState;
+bool soundPlaying = false; // Tracks if sound is on or off
+float frequency = 1000;    // Initial frequency
+float minFreq = 20;        // Minimum frequency
+float maxFreq = 1000;      // Maximum frequency
+
+// Debounce timing
+unsigned long lastDebounceTime = 0;
+const unsigned long debounceDelay = 50; // 50 ms debounce delay
+bool buttonPressed = false;
+
+// Rotation speed detection
+unsigned long lastRotationTime = 0;
+const unsigned long rotationSpeedThreshold = 50; // Time in ms to consider a fast turn
+
+void setup() {
+  // Setup rotary encoder pins
+  pinMode(clkPin, INPUT);
+  pinMode(dtPin, INPUT);
+  pinMode(swPin, INPUT_PULLUP);
+
+  // Initialize rotary encoder state
+  clkLastState = digitalRead(clkPin);
+
+  // Start serial communication for debugging
+  Serial.begin(115200);
+  while (!Serial);
+  
+  // Initialize I2S audio
+  Serial.println("Starting I2S...");
+  auto config = out.defaultConfig(TX_MODE);
+  config.copyFrom(info); 
+  out.begin(config);
+
+  // Setup sine wave generator
+  sineWave.begin(info, frequency);
+  Serial.println("Audio started...");
+}
+
+void loop() {
+  handleRotaryEncoder(); // Adjust frequency based on rotary encoder
+  handleButtonPress();   // Handle button press to toggle sound
+
+  // Only stream audio if the sound is playing
+  if (soundPlaying) {
+    sineWave.setFrequency(frequency); // Apply new frequency
+    copier.copy(); // Stream audio
+  }
+}
+
+// Function to handle rotary encoder input
+void handleRotaryEncoder() {
+  int clkState = digitalRead(clkPin);
+  int dtState = digitalRead(dtPin);
+
+  // Check for rotation with debounce
+  if ((millis() - lastDebounceTime) > debounceDelay) {
+    if (clkState != clkLastState) {
+      unsigned long currentRotationTime = millis();
+      if ((currentRotationTime - lastRotationTime) < rotationSpeedThreshold) {
+        // Fast rotation: Increase or decrease frequency rapidly
+        if (dtState != clkState) {
+          frequency = min(frequency + 50, maxFreq); // Increase frequency rapidly
+        } else {
+          frequency = max(frequency - 50, minFreq); // Decrease frequency rapidly
+        }
+      } else {
+        // Slow rotation: Regular adjustment
+        if (dtState != clkState) {
+          frequency = min(frequency + 10, maxFreq); // Regular increase
+        } else {
+          frequency = max(frequency - 10, minFreq); // Regular decrease
+        }
+      }
+
+      // Debugging output
+      Serial.print("Frequency: ");
+      Serial.println(frequency);
+
+      // Update debounce timing
+      lastDebounceTime = millis();
+      lastRotationTime = currentRotationTime;
+    }
+  }
+  clkLastState = clkState;
+}
+
+// Function to handle button press for toggling sound on/off
+void handleButtonPress() {
+  int reading = digitalRead(swPin);
+
+  // Check if button state has changed
+  if (reading == LOW && !buttonPressed) {
+    buttonPressed = true;
+
+    // Toggle the sound playing state
+    soundPlaying = !soundPlaying;
+
+    // Print debugging message
+    if (soundPlaying) {
+      Serial.println("Sound ON");
+    } else {
+      Serial.println("Sound OFF");
+    }
+  } else if (reading == HIGH) {
+    buttonPressed = false;
+  }
+}
+```
+
 
 
 
